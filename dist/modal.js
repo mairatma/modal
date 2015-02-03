@@ -1,5 +1,6 @@
 import templates from 'alloyui-modal/modal.soy';
 import Tooltip from 'alloyui-tooltip';
+import lfr from 'lfr/lfr';
 
 function Modal(opt_config) {
   Modal.base(this, 'constructor', opt_config);
