@@ -1,0 +1,33 @@
+{
+  "name": "alloy-modal",
+  "version": "0.0.1",
+  "description": "A modal component built with liferay-apps/api.js",
+  "license": "MIT",
+  "repository": "liferay-apps/alloy-modal",
+  "author": {
+    "name": "Maira Bello",
+    "email": "maira.araujo@liferay.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "closure-templates": "20130416.0.0",
+    "del": "^0.1.3",
+    "gulp": "^3.8.10",
+    "gulp-es6-module-transpiler": "^0.2.1",
+    "gulp-if": "^1.2.5",
+    "gulp-ignore": "^1.2.1",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-soynode": "^1.1.1",
+    "gulp-wrapper": "^0.1.5",
+    "run-sequence": "^1.0.1"
+  },
+  "jspm": {
+    "directories": {
+      "lib": "dist"
+    }
+  }
+}
