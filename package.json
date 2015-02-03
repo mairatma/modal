@@ -27,8 +27,8 @@
       "lib": "dist"
     },
     "dependencies": {
-      "alloyui-tooltip": "github:alloyui/tooltip@master",
-      "lfr": "github:mairatma/api.js@import"
+      "alloyui": "github:mairatma/core@es6",
+      "alloyui-tooltip": "github:alloyui/tooltip@master"
     }
   }
 }

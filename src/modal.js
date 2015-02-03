@@ -1,11 +1,12 @@
+import core from 'alloyui/core';
 import templates from 'alloyui-modal/modal.soy';
+import SoyComponent from 'alloyui/component/SoyComponent';
 import Tooltip from 'alloyui-tooltip';
-import lfr from 'lfr/lfr';
 
 function Modal(opt_config) {
   Modal.base(this, 'constructor', opt_config);
 }
-lfr.inherits(Modal, lfr.SoyComponent);
+core.inherits(Modal, SoyComponent);
 
 Modal.ATTRS = {
   bodyContent: {
