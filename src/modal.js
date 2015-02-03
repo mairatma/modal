@@ -1,4 +1,4 @@
-import templates from 'alloy-modal/modal.soy';
+import templates from 'alloyui-modal/modal.soy';
 
 function Modal(opt_config) {
   Modal.base(this, 'constructor', opt_config);
