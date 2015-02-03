@@ -25,6 +25,9 @@
   "jspm": {
     "directories": {
       "lib": "dist"
+    },
+    "dependencies": {
+      "alloyui-tooltip": "github:alloyui/tooltip@master"
     }
   }
 }

@@ -25,5 +25,5 @@ gulp.task('build', function(done) {
 });
 
 gulp.task('watch', ['build'], function(done) {
-	gulp.watch('src/*.soy', ['soy']);
+	gulp.watch('src/**/*.*', ['build']);
 });
