@@ -8,39 +8,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../dist/modal.css">
 
-    <script src="../jspm_packages/system.js"></script>
-    <script src="../config.js"></script>
     <script src="../node_modules/closure-templates/soyutils.js"></script>
+    <script src="../dist/modal_bundle.js"></script>
 </head>
 <body>
     <h1>Modal</h1>
     <div id="container"></div>
     <script>
-        System.baseURL = '../';
-        System.import('alloyui-modal/modal').then(function(module) {
-            var Modal = module.default;
-            window.modalComponent = new Modal({
-                bodyContent: 'One fine body…',
-                headerContent: 'Modal header',
-                visible: true,
-                footerButtons: [
-                    {
-                      class: 'btn btn-default',
-                      label: 'Cancel'
-                    },
-                    {
-                      class: 'btn btn-primary',
-                      label: 'OK'
-                    }
-                ]
-            }).render('#container');
+        var Modal = window.alloyui.Modal;
+        window.modalComponent = new Modal({
+            bodyContent: 'One fine body…',
+            headerContent: 'Modal header',
+            visible: true,
+            footerButtons: [
+                {
+                  class: 'btn btn-default',
+                  label: 'Cancel'
+                },
+                {
+                  class: 'btn btn-primary',
+                  label: 'OK'
+                }
+            ]
+        }).render('#container');
 
-            modalComponent.on('buttonClicked', function(event) {
-              if (event.button.classList.contains('btn-primary')) {
-                alert('Action done');
-              }
-              modalComponent.visible = false;
-            });
+        modalComponent.on('buttonClicked', function(event) {
+          if (event.button.classList.contains('btn-primary')) {
+            alert('Action done');
+          }
+          modalComponent.visible = false;
         });
     </script>
 </body>

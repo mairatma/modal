@@ -1,7 +1,7 @@
 import core from 'alloyui/core';
 import templates from 'alloyui-modal/modal.soy';
 import SoyComponent from 'alloyui/component/SoyComponent';
-import Tooltip from 'alloyui-tooltip';
+import Tooltip from 'alloyui-tooltip/tooltip';
 
 function Modal(opt_config) {
   Modal.base(this, 'constructor', opt_config);
