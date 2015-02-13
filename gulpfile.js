@@ -28,19 +28,22 @@ gulp.task('soy', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build',['clean'], function(done) {
-  runSequence(['copy', 'soy'], done);
-});
-
-gulp.task('build-globals', ['build'], function() {
+gulp.task('build:globals', function() {
   return gulp.src('dist/*.js')
-    .pipe(renamer({basePath: __dirname, configPath: path.join(__dirname, 'config.js')}))
+    .pipe(renamer({
+      basePath: __dirname,
+      configPath: path.join(__dirname, 'config.js')
+    }))
     .pipe(transpile({
       basePath: __dirname,
       bundleFileName: 'modal_bundle.js',
       formatter: new GlobalsFormatter({globalName: 'alloyui'})
     }))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', function(done) {
+  runSequence('clean', ['copy', 'soy'], 'build:globals', done);
 });
 
 gulp.task('watch', ['build'], function(done) {
