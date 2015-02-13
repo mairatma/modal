@@ -9,6 +9,10 @@ var runSequence = require('run-sequence');
 var renamer = require('gulp-es6-imports-renamer');
 var transpile = require('gulp-es6-module-transpiler');
 
+gulp.task('clean', function(done) {
+  del(['dist'], done);
+});
+
 gulp.task('copy', function() {
   return gulp.src('src/**/*.*')
     .pipe(gulp.dest('dist'));
@@ -24,7 +28,7 @@ gulp.task('soy', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', function(done) {
+gulp.task('build',['clean'], function(done) {
   runSequence(['copy', 'soy'], done);
 });
 
