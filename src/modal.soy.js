@@ -1,4 +1,4 @@
-// This file was automatically generated from modal.soy.
+/* jshint ignore:start */// This file was automatically generated from modal.soy.
 // Please don't edit this file by hand.
 
 /**
@@ -70,3 +70,4 @@ if (goog.DEBUG) {
   templates.footer.soyTemplateName = 'templates.footer';
 }
 export default templates;
+/* jshint ignore:end */

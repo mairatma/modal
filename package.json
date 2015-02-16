@@ -13,19 +13,9 @@
   },
   "keywords": [],
   "devDependencies": {
+    "alloyui-tasks": "git://github.com/alloyui/tasks",
     "closure-templates": "20130416.0.0",
-    "del": "^0.1.3",
-    "es6-module-transpiler-globals-formatter": "^0.1.1",
-    "gulp": "^3.8.10",
-    "gulp-es6-imports-renamer": "git://github.com/mairatma/gulp-es6-imports-renamer",
-    "gulp-es6-module-transpiler": "git://github.com/mairatma/gulp-es6-module-transpiler#bundle",
-    "gulp-ignore": "^1.2.1",
-    "gulp-load-plugins": "^0.8.0",
-    "gulp-soynode": "^1.1.1",
-    "gulp-util": "^3.0.3",
-    "gulp-wrapper": "^0.1.5",
-    "jspm": "^0.13.4",
-    "run-sequence": "^1.0.1"
+    "gulp": "^3.8.10"
   },
   "jspm": {
     "directories": {
