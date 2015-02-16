@@ -1,7 +1,9 @@
-import core from 'alloyui/core';
-import templates from 'alloyui-modal/modal.soy';
-import SoyComponent from 'alloyui/component/SoyComponent';
-import Tooltip from 'alloyui-tooltip/tooltip';
+'use strict';
+
+import core from 'aui/core';
+import templates from './modal.soy';
+import SoyComponent from 'aui/component/SoyComponent';
+import Tooltip from 'aui-tooltip/tooltip';
 
 function Modal(opt_config) {
   Modal.base(this, 'constructor', opt_config);
@@ -48,7 +50,9 @@ Modal.prototype.attached = function() {
   var instance = this;
 
   this.delegate('click', '.modal-button', function(event) {
-    instance.emit('buttonClicked', {button: event.delegateTarget});
+    instance.emit('buttonClicked', {
+      button: event.delegateTarget
+    });
   });
 
   this.tooltip_ = new Tooltip({

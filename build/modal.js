@@ -6,21 +6,21 @@
      * A collection of core utility functions.
      * @const
      */
-    var jspm_packages$github$mairatma$core$es6$core$$core = {};
+    var jspm_packages$github$alloyui$core$master$core$$core = {};
 
     /**
      * Unique id property prefix.
      * @type {String}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.UID_PROPERTY = 'core_' + ((Math.random() * 1e9) >>> 0);
+    jspm_packages$github$alloyui$core$master$core$$core.UID_PROPERTY = 'core_' + ((Math.random() * 1e9) >>> 0);
 
     /**
      * Counter for unique id.
      * @type {Number}
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.uniqueIdCounter_ = 1;
+    jspm_packages$github$alloyui$core$master$core$$core.uniqueIdCounter_ = 1;
 
     /**
      * When defining a class Foo with an abstract method bar(), you can do:
@@ -32,7 +32,7 @@
      * @type {!Function}
      * @throws {Error} when invoked to indicate the method should be overridden.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.abstractMethod = function() {
+    jspm_packages$github$alloyui$core$master$core$$core.abstractMethod = function() {
       throw Error('Unimplemented abstract method');
     };
 
@@ -52,15 +52,15 @@
      * @return {!Function} A partially-applied form of the function bind() was
      *     invoked as a method of.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.bind = function(fn) {
+    jspm_packages$github$alloyui$core$master$core$$core.bind = function(fn) {
       if (!fn) {
         throw new Error();
       }
 
       if (Function.prototype.bind) {
-        return jspm_packages$github$mairatma$core$es6$core$$core.bindWithNative_.apply(jspm_packages$github$mairatma$core$es6$core$$core, arguments);
+        return jspm_packages$github$alloyui$core$master$core$$core.bindWithNative_.apply(jspm_packages$github$alloyui$core$master$core$$core, arguments);
       } else {
-        return jspm_packages$github$mairatma$core$es6$core$$core.bindWithoutNative_.apply(jspm_packages$github$mairatma$core$es6$core$$core, arguments);
+        return jspm_packages$github$alloyui$core$master$core$$core.bindWithoutNative_.apply(jspm_packages$github$alloyui$core$master$core$$core, arguments);
       }
     };
 
@@ -76,7 +76,7 @@
      *     invoked as a method of.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.bindWithArgs_ = function(fn, context) {
+    jspm_packages$github$alloyui$core$master$core$$core.bindWithArgs_ = function(fn, context) {
       var args = Array.prototype.slice.call(arguments, 2);
 
       return function() {
@@ -99,7 +99,7 @@
      *     invoked as a method of.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.bindWithNative_ = function(fn) {
+    jspm_packages$github$alloyui$core$master$core$$core.bindWithNative_ = function(fn) {
       var bind = fn.call.apply(fn.bind, arguments);
       return function() {
         return bind.apply(null, arguments);
@@ -115,7 +115,7 @@
      *     invoked as a method of.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.bindWithoutArgs_ = function(fn, context) {
+    jspm_packages$github$alloyui$core$master$core$$core.bindWithoutArgs_ = function(fn, context) {
       return function() {
         return fn.apply(context, arguments);
       };
@@ -134,11 +134,11 @@
      *     invoked as a method of.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.bindWithoutNative_ = function(fn, context) {
+    jspm_packages$github$alloyui$core$master$core$$core.bindWithoutNative_ = function(fn, context) {
       if (arguments.length > 2) {
-        return jspm_packages$github$mairatma$core$es6$core$$core.bindWithArgs_.apply(jspm_packages$github$mairatma$core$es6$core$$core, arguments);
+        return jspm_packages$github$alloyui$core$master$core$$core.bindWithArgs_.apply(jspm_packages$github$alloyui$core$master$core$$core, arguments);
       } else {
-        return jspm_packages$github$mairatma$core$es6$core$$core.bindWithoutArgs_(fn, context);
+        return jspm_packages$github$alloyui$core$master$core$$core.bindWithoutArgs_(fn, context);
       }
     };
 
@@ -151,7 +151,7 @@
      * @param {string} propertyName Property name to be collected.
      * @return {Array.<*>} Array of collected values.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.collectSuperClassesProperty = function(constructor, propertyName) {
+    jspm_packages$github$alloyui$core$master$core$$core.collectSuperClassesProperty = function(constructor, propertyName) {
       var propertyValues = [constructor[propertyName]];
       while (constructor.superClass_) {
         constructor = constructor.superClass_.constructor;
@@ -169,12 +169,12 @@
      *     specified this method only returns the uid.
      * @throws {Error} when invoked to indicate the method should be overridden.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.getUid = function(opt_object) {
+    jspm_packages$github$alloyui$core$master$core$$core.getUid = function(opt_object) {
       if (opt_object) {
-        return opt_object[jspm_packages$github$mairatma$core$es6$core$$core.UID_PROPERTY] ||
-          (opt_object[jspm_packages$github$mairatma$core$es6$core$$core.UID_PROPERTY] = jspm_packages$github$mairatma$core$es6$core$$core.uniqueIdCounter_++);
+        return opt_object[jspm_packages$github$alloyui$core$master$core$$core.UID_PROPERTY] ||
+          (opt_object[jspm_packages$github$alloyui$core$master$core$$core.UID_PROPERTY] = jspm_packages$github$alloyui$core$master$core$$core.uniqueIdCounter_++);
       }
-      return jspm_packages$github$mairatma$core$es6$core$$core.uniqueIdCounter_++;
+      return jspm_packages$github$alloyui$core$master$core$$core.uniqueIdCounter_++;
     };
 
     /**
@@ -197,7 +197,7 @@
      * @param {Function} childCtor Child class.
      * @param {Function} parentCtor Parent class.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.inherits = function(childCtor, parentCtor) {
+    jspm_packages$github$alloyui$core$master$core$$core.inherits = function(childCtor, parentCtor) {
       function TempCtor() {
       }
       TempCtor.prototype = parentCtor.prototype;
@@ -229,7 +229,7 @@
      * @param {*=} opt_returnValue The single value that will be returned.
      * @return {?} The first argument.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.identityFunction = function(opt_returnValue) {
+    jspm_packages$github$alloyui$core$master$core$$core.identityFunction = function(opt_returnValue) {
       return opt_returnValue;
     };
 
@@ -238,7 +238,7 @@
      * @param {?} val Variable to test.
      * @return {boolean} Whether variable is boolean.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isBoolean = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isBoolean = function(val) {
       return typeof val === 'boolean';
     };
 
@@ -247,7 +247,7 @@
      * @param {?} val Variable to test.
      * @return {boolean} Whether variable is defined.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isDef = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isDef = function(val) {
       return val !== undefined;
     };
 
@@ -256,8 +256,8 @@
      * @param {*} val
      * @return {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isDefAndNotNull = function(val) {
-      return jspm_packages$github$mairatma$core$es6$core$$core.isDef(val) && !jspm_packages$github$mairatma$core$es6$core$$core.isNull(val);
+    jspm_packages$github$alloyui$core$master$core$$core.isDefAndNotNull = function(val) {
+      return jspm_packages$github$alloyui$core$master$core$$core.isDef(val) && !jspm_packages$github$alloyui$core$master$core$$core.isNull(val);
     };
 
     /**
@@ -265,7 +265,7 @@
      * @param {*} val
      * @return {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isElement = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isElement = function(val) {
       return val && typeof val === 'object' && val.nodeType === 1;
     };
 
@@ -274,7 +274,7 @@
      * @param {?} val Variable to test.
      * @return {boolean} Whether variable is a function.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isFunction = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isFunction = function(val) {
       return typeof val === 'function';
     };
 
@@ -283,7 +283,7 @@
      * @param {*} val
      * @return {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isNull = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isNull = function(val) {
       return val === null;
     };
 
@@ -293,7 +293,7 @@
      * @param {?} val Variable to test.
      * @return {boolean} Whether variable is an object.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isObject = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isObject = function(val) {
       var type = typeof val;
       return type === 'object' && val !== null || type === 'function';
     };
@@ -303,7 +303,7 @@
      * @param {*} val
      * @return {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.isString = function(val) {
+    jspm_packages$github$alloyui$core$master$core$$core.isString = function(val) {
       return typeof val === 'string';
     };
 
@@ -319,13 +319,13 @@
      *   Should return the merged value to be stored on the current class.
      * @return {*} The value of the merged property.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.mergeSuperClassesProperty = function(constructor, propertyName, opt_mergeFn) {
+    jspm_packages$github$alloyui$core$master$core$$core.mergeSuperClassesProperty = function(constructor, propertyName, opt_mergeFn) {
       var mergedName = propertyName + '_MERGED';
       if (constructor[mergedName]) {
         return constructor[mergedName];
       }
 
-      var merged = jspm_packages$github$mairatma$core$es6$core$$core.collectSuperClassesProperty(constructor, propertyName);
+      var merged = jspm_packages$github$alloyui$core$master$core$$core.collectSuperClassesProperty(constructor, propertyName);
       if (opt_mergeFn) {
         merged = opt_mergeFn(merged);
       }
@@ -337,7 +337,7 @@
      * Null function used for default values of callbacks, etc.
      * @return {void} Nothing.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.nullFunction = function() {};
+    jspm_packages$github$alloyui$core$master$core$$core.nullFunction = function() {};
 
     /**
      * Creates a new function that, when called, has its this keyword set to the
@@ -355,7 +355,7 @@
      * @return {!Function} A partially-applied form of the function bind() was
      *     invoked as a method of.
      */
-    jspm_packages$github$mairatma$core$es6$core$$core.rbind = function(fn, context) {
+    jspm_packages$github$alloyui$core$master$core$$core.rbind = function(fn, context) {
       if (!fn) {
         throw new Error();
       }
@@ -374,9 +374,9 @@
       }
     };
 
-    var jspm_packages$github$mairatma$core$es6$core$$default = jspm_packages$github$mairatma$core$es6$core$$core;
+    var jspm_packages$github$alloyui$core$master$core$$default = jspm_packages$github$alloyui$core$master$core$$core;
 
-    if (typeof dist$modal$soy$$templates == 'undefined') { var dist$modal$soy$$templates = {}; }
+    if (typeof src$modal$soy$$templates == 'undefined') { var src$modal$soy$$templates = {}; }
 
 
     /**
@@ -385,11 +385,11 @@
      * @return {!soydata.SanitizedHtml}
      * @suppress {checkTypes}
      */
-    dist$modal$soy$$templates.element = function(opt_data, opt_ignored) {
+    src$modal$soy$$templates.element = function(opt_data, opt_ignored) {
       return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-dialog"><div class="modal-content"><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header" class="modal-header"></div><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-body" class="modal-body"></div><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-footer" class="modal-footer"></div></div></div>');
     };
     if (goog.DEBUG) {
-      dist$modal$soy$$templates.element.soyTemplateName = 'templates.element';
+      src$modal$soy$$templates.element.soyTemplateName = 'templates.element';
     }
 
 
@@ -399,11 +399,11 @@
      * @return {!soydata.SanitizedHtml}
      * @suppress {checkTypes}
      */
-    dist$modal$soy$$templates.body = function(opt_data, opt_ignored) {
+    src$modal$soy$$templates.body = function(opt_data, opt_ignored) {
       return soydata.VERY_UNSAFE.ordainSanitizedHtml('<p>' + soy.$$escapeHtml(opt_data.bodyContent) + '</p>');
     };
     if (goog.DEBUG) {
-      dist$modal$soy$$templates.body.soyTemplateName = 'templates.body';
+      src$modal$soy$$templates.body.soyTemplateName = 'templates.body';
     }
 
 
@@ -413,11 +413,11 @@
      * @return {!soydata.SanitizedHtml}
      * @suppress {checkTypes}
      */
-    dist$modal$soy$$templates.header = function(opt_data, opt_ignored) {
+    src$modal$soy$$templates.header = function(opt_data, opt_ignored) {
       return soydata.VERY_UNSAFE.ordainSanitizedHtml('<h4 class="modal-title">' + soy.$$escapeHtml(opt_data.headerContent) + '</h4>');
     };
     if (goog.DEBUG) {
-      dist$modal$soy$$templates.header.soyTemplateName = 'templates.header';
+      src$modal$soy$$templates.header.soyTemplateName = 'templates.header';
     }
 
 
@@ -427,7 +427,7 @@
      * @return {!soydata.SanitizedHtml}
      * @suppress {checkTypes}
      */
-    dist$modal$soy$$templates.footer = function(opt_data, opt_ignored) {
+    src$modal$soy$$templates.footer = function(opt_data, opt_ignored) {
       var output = '';
       var buttonList19 = opt_data.footerButtons;
       var buttonListLen19 = buttonList19.length;
@@ -438,12 +438,12 @@
       return soydata.VERY_UNSAFE.ordainSanitizedHtml(output);
     };
     if (goog.DEBUG) {
-      dist$modal$soy$$templates.footer.soyTemplateName = 'templates.footer';
+      src$modal$soy$$templates.footer.soyTemplateName = 'templates.footer';
     }
-    var dist$modal$soy$$default = dist$modal$soy$$templates;
+    var src$modal$soy$$default = src$modal$soy$$templates;
     'use strict';
 
-    var jspm_packages$github$mairatma$core$es6$object$object$$object = {};
+    var jspm_packages$github$alloyui$core$master$object$object$$object = {};
 
     /**
      * Copies all the members of a source object to a target object.
@@ -451,7 +451,7 @@
      * @param {...Object} var_args The objects from which values will be copied.
      * @return {Object} Returns the target object reference.
      */
-    jspm_packages$github$mairatma$core$es6$object$object$$object.mixin = function(target) {
+    jspm_packages$github$alloyui$core$master$object$object$$object.mixin = function(target) {
       var key, source;
       for (var i = 1; i < arguments.length; i++) {
         source = arguments[i];
@@ -462,7 +462,7 @@
       return target;
     };
 
-    var jspm_packages$github$mairatma$core$es6$object$object$$default = jspm_packages$github$mairatma$core$es6$object$object$$object;
+    var jspm_packages$github$alloyui$core$master$object$object$$default = jspm_packages$github$alloyui$core$master$object$object$$object;
     'use strict';
 
     /**
@@ -472,19 +472,19 @@
      * `disposeInternal` to implement any specific disposing logic.
      * @constructor
      */
-    var jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable = function() {};
+    var jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable = function() {};
 
     /**
      * Flag indicating if this instance has already been disposed.
      * @type {boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable.prototype.disposed_ = false;
+    jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable.prototype.disposed_ = false;
 
     /**
      * Disposes of this instance's object references. Calls `disposeInternal`.
      */
-    jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable.prototype.dispose = function() {
+    jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable.prototype.dispose = function() {
       if (!this.disposed_) {
         this.disposeInternal();
         this.disposed_ = true;
@@ -496,17 +496,17 @@
      * disposing logic (like clearing references and calling `dispose` on other
      * disposables).
      */
-    jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable.prototype.disposeInternal = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable.prototype.disposeInternal = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Checks if this instance has already been disposed.
      * @return {boolean}
      */
-    jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable.prototype.isDisposed = function() {
+    jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable.prototype.isDisposed = function() {
       return this.disposed_;
     };
 
-    var jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default = jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable;
+    var jspm_packages$github$alloyui$core$master$disposable$Disposable$$default = jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable;
     'use strict';
 
     /**
@@ -519,40 +519,41 @@
      * @param {string} event The name of the event that was subscribed to.
      * @param {!Function} listener The listener subscribed to the event.
      * @constructor
+     * @extends {Disposable}
      */
-    var jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle = function(emitter, event, listener) {
+    var jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle = function(emitter, event, listener) {
       this.emitter_ = emitter;
       this.event_ = event;
       this.listener_ = listener;
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle, jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle, jspm_packages$github$alloyui$core$master$disposable$Disposable$$default);
 
     /**
      * The EventEmitter instance that the event was subscribed to.
      * @type {EventEmitter}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle.prototype.emitter_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle.prototype.emitter_ = null;
 
     /**
      * The name of the event that was subscribed to.
      * @type {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle.prototype.event_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle.prototype.event_ = null;
 
     /**
      * The listener subscribed to the event.
      * @type {Function}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle.prototype.listener_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle.prototype.listener_ = null;
 
     /**
      * Disposes of this instance's object references.
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle.prototype.disposeInternal = function() {
       this.emitter_ = null;
       this.listener_ = null;
     };
@@ -560,13 +561,13 @@
     /**
      * Removes the listener subscription from the emitter.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle.prototype.removeListener = function() {
+    jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle.prototype.removeListener = function() {
       if (!this.emitter_.isDisposed()) {
         this.emitter_.removeListener(this.event_, this.listener_);
       }
     };
 
-    var jspm_packages$github$mairatma$core$es6$events$EventHandle$$default = jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle;
+    var jspm_packages$github$alloyui$core$master$events$EventHandle$$default = jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle;
     'use strict';
 
     /**
@@ -576,30 +577,31 @@
      * @param {string} event The name of the event that was subscribed to.
      * @param {!Function} listener The listener subscribed to the event.
      * @constructor
+     * @extends {EventHandle}
      */
-    var jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle = function(emitter, event, listener) {
-      jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle.base(this, 'constructor', emitter, event, listener);
+    var jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle = function(emitter, event, listener) {
+      jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle.base(this, 'constructor', emitter, event, listener);
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle, jspm_packages$github$mairatma$core$es6$events$EventHandle$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle, jspm_packages$github$alloyui$core$master$events$EventHandle$$default);
 
     /**
      * @inheritDoc
      */
-    jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle.prototype.removeListener = function() {
+    jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle.prototype.removeListener = function() {
       this.emitter_.removeEventListener(this.event_, this.listener_);
     };
 
-    var jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$default = jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle;
+    var jspm_packages$github$alloyui$core$master$events$DomEventHandle$$default = jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle;
     'use strict';
 
-    var jspm_packages$github$mairatma$core$es6$dom$dom$$dom = {};
+    var jspm_packages$github$alloyui$core$master$dom$dom$$dom = {};
 
     /**
      * Adds the requested CSS classes to an element.
      * @param {!Element} element The element to add CSS classes to.
      * @param {!Array<string>} classes CSS classes to add.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.addClasses = function(element, classes) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.addClasses = function(element, classes) {
       classes.forEach(function(className) {
         element.classList.add(className);
       });
@@ -613,9 +615,9 @@
      * @param {!Element|String} child The thing to append to the parent.
      * @return {!Element} The appended child.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.append = function(parent, child) {
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isString(child)) {
-        child = jspm_packages$github$mairatma$core$es6$dom$dom$$dom.buildFragment(child);
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.append = function(parent, child) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isString(child)) {
+        child = jspm_packages$github$alloyui$core$master$dom$dom$$dom.buildFragment(child);
       }
       return parent.appendChild(child);
     };
@@ -625,7 +627,7 @@
      * @param {string} htmlString The HTML string to convert.
      * @return {!Element} The resulting document fragment.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.buildFragment = function(htmlString) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.buildFragment = function(htmlString) {
       var tempDiv = document.createElement('div');
       tempDiv.innerHTML = '<br>' + htmlString;
       tempDiv.removeChild(tempDiv.firstChild);
@@ -649,11 +651,11 @@
      *   triggered. It will receive the normalized event object.
      * @return {!DomEventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.delegate = function(element, eventName, selector, callback) {
-      return jspm_packages$github$mairatma$core$es6$dom$dom$$dom.on(
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.delegate = function(element, eventName, selector, callback) {
+      return jspm_packages$github$alloyui$core$master$dom$dom$$dom.on(
         element,
         eventName,
-        jspm_packages$github$mairatma$core$es6$core$$default.bind(jspm_packages$github$mairatma$core$es6$dom$dom$$dom.handleDelegateEvent_, null, selector, callback)
+        jspm_packages$github$alloyui$core$master$core$$default.bind(jspm_packages$github$alloyui$core$master$dom$dom$$dom.handleDelegateEvent_, null, selector, callback)
       );
     };
 
@@ -668,14 +670,14 @@
      * @return {boolean} False if at least one of the triggered callbacks returns false,
      *   or true otherwise.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.handleDelegateEvent_ = function(selector, callback, event) {
-      jspm_packages$github$mairatma$core$es6$dom$dom$$dom.normalizeDelegateEvent_(event);
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.handleDelegateEvent_ = function(selector, callback, event) {
+      jspm_packages$github$alloyui$core$master$dom$dom$$dom.normalizeDelegateEvent_(event);
 
       var currentElement = event.target;
       var returnValue = true;
 
       while (currentElement && !event.stopped) {
-        if (jspm_packages$github$mairatma$core$es6$dom$dom$$dom.match(currentElement, selector)) {
+        if (jspm_packages$github$alloyui$core$master$dom$dom$$dom.match(currentElement, selector)) {
           event.delegateTarget = currentElement;
           returnValue &= callback(event);
         }
@@ -691,7 +693,7 @@
      * @param {string} selector
      * @return {boolean}
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.match = function(element, selector) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.match = function(element, selector) {
       if (!element || element.nodeType !== 1) {
         return false;
       }
@@ -702,7 +704,7 @@
         return m.call(element, selector);
       }
 
-      return jspm_packages$github$mairatma$core$es6$dom$dom$$dom.matchFallback_(element, selector);
+      return jspm_packages$github$alloyui$core$master$dom$dom$$dom.matchFallback_(element, selector);
     };
 
     /**
@@ -713,7 +715,7 @@
      * @return {boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.matchFallback_ = function(element, selector) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.matchFallback_ = function(element, selector) {
       var nodes = document.querySelectorAll(selector, element.parentNode);
       for (var i = 0; i < nodes.length; ++i) {
         if (nodes[i] === element) {
@@ -727,9 +729,9 @@
      * Normalizes the event payload for delegate listeners.
      * @param {!Event} event
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.normalizeDelegateEvent_ = function(event) {
-      event.stopPropagation = jspm_packages$github$mairatma$core$es6$dom$dom$$dom.stopPropagation_;
-      event.stopImmediatePropagation = jspm_packages$github$mairatma$core$es6$dom$dom$$dom.stopImmediatePropagation_;
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.normalizeDelegateEvent_ = function(event) {
+      event.stopPropagation = jspm_packages$github$alloyui$core$master$dom$dom$$dom.stopPropagation_;
+      event.stopImmediatePropagation = jspm_packages$github$alloyui$core$master$dom$dom$$dom.stopImmediatePropagation_;
     };
 
     /**
@@ -742,16 +744,16 @@
      *   triggered. It will receive the normalized event object.
      * @return {!DomEventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.on = function(element, eventName, callback) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.on = function(element, eventName, callback) {
       element.addEventListener(eventName, callback);
-      return new jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$default(element, eventName, callback);
+      return new jspm_packages$github$alloyui$core$master$events$DomEventHandle$$default(element, eventName, callback);
     };
 
     /**
      * Removes all the child nodes on a DOM node.
      * @param {Element} node Element to remove children from.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.removeChildren = function(node) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.removeChildren = function(node) {
       var child;
       while ((child = node.firstChild)) {
         node.removeChild(child);
@@ -763,7 +765,7 @@
      * @param {!Element} element The element to remove CSS classes from.
      * @param {!Array<string>} classes CSS classes to remove.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.removeClasses = function(element, classes) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.removeClasses = function(element, classes) {
       classes.forEach(function(className) {
         element.classList.remove(className);
       });
@@ -773,7 +775,7 @@
      * The function that replaces `stopImmediatePropagation_` for events.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.stopImmediatePropagation_ = function() {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.stopImmediatePropagation_ = function() {
       this.stopped = true;
       Event.prototype.stopImmediatePropagation.call(this);
     };
@@ -782,7 +784,7 @@
      * The function that replaces `stopPropagation` for events.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.stopPropagation_ = function() {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.stopPropagation_ = function() {
       this.stopped = true;
       Event.prototype.stopPropagation.call(this);
     };
@@ -793,7 +795,7 @@
      * @param {string} eventName The name of the event to check.
      * @return {boolean}
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.supportsEvent = function(element, eventName) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.supportsEvent = function(element, eventName) {
       return 'on' + eventName in element;
     };
 
@@ -804,10 +806,10 @@
      * @param {string|Element} selectorOrElement
      * @return {Element} The converted element, or null if none was found.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.toElement = function(selectorOrElement) {
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isElement(selectorOrElement)) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.toElement = function(selectorOrElement) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isElement(selectorOrElement)) {
         return selectorOrElement;
-      } else if (jspm_packages$github$mairatma$core$es6$core$$default.isString(selectorOrElement)) {
+      } else if (jspm_packages$github$alloyui$core$master$core$$default.isString(selectorOrElement)) {
         return document.querySelector(selectorOrElement);
       } else {
         return null;
@@ -822,24 +824,24 @@
      * @param {Object=} opt_eventObj An object with data that should be on the
      *   triggered event's payload.
      */
-    jspm_packages$github$mairatma$core$es6$dom$dom$$dom.triggerEvent = function(element, eventName, opt_eventObj) {
+    jspm_packages$github$alloyui$core$master$dom$dom$$dom.triggerEvent = function(element, eventName, opt_eventObj) {
       var eventObj = document.createEvent('HTMLEvents');
       eventObj.initEvent(eventName, true, true);
-      jspm_packages$github$mairatma$core$es6$object$object$$default.mixin(eventObj, opt_eventObj);
+      jspm_packages$github$alloyui$core$master$object$object$$default.mixin(eventObj, opt_eventObj);
       element.dispatchEvent(eventObj);
     };
 
-    var jspm_packages$github$mairatma$core$es6$dom$dom$$default = jspm_packages$github$mairatma$core$es6$dom$dom$$dom;
+    var jspm_packages$github$alloyui$core$master$dom$dom$$default = jspm_packages$github$alloyui$core$master$dom$dom$$dom;
     'use strict';
 
-    var jspm_packages$github$mairatma$core$es6$array$array$$array = {};
+    var jspm_packages$github$alloyui$core$master$array$array$$array = {};
 
     /**
      * Returns the first value in the given array that isn't undefined.
      * @param {!Array} arr
      * @return {*}
      */
-    jspm_packages$github$mairatma$core$es6$array$array$$array.firstDefinedValue = function(arr) {
+    jspm_packages$github$alloyui$core$master$array$array$$array.firstDefinedValue = function(arr) {
       for (var i = 0; i < arr.length; i++) {
         if (arr[i] !== undefined) {
           return arr[i];
@@ -853,11 +855,11 @@
      * @param {Array.<*>} opt_output Optional output array.
      * @return {Array.<*>} Flat array.
      */
-    jspm_packages$github$mairatma$core$es6$array$array$$array.flatten = function(arr, opt_output) {
+    jspm_packages$github$alloyui$core$master$array$array$$array.flatten = function(arr, opt_output) {
       var output = opt_output || [];
       for (var i = 0; i < arr.length; i++) {
         if (Array.isArray(arr[i])) {
-          jspm_packages$github$mairatma$core$es6$array$array$$array.flatten(arr[i], output);
+          jspm_packages$github$alloyui$core$master$array$array$$array.flatten(arr[i], output);
         } else {
           output.push(arr[i]);
         }
@@ -872,11 +874,11 @@
      * @return {boolean} True if an element was removed.
      * @template T
      */
-    jspm_packages$github$mairatma$core$es6$array$array$$array.remove = function(arr, obj) {
+    jspm_packages$github$alloyui$core$master$array$array$$array.remove = function(arr, obj) {
       var i = arr.indexOf(obj);
       var rv;
       if ( (rv = i >= 0) ) {
-        jspm_packages$github$mairatma$core$es6$array$array$$array.removeAt(arr, i);
+        jspm_packages$github$alloyui$core$master$array$array$$array.removeAt(arr, i);
       }
       return rv;
     };
@@ -887,14 +889,14 @@
      * @param {number} i The index to remove.
      * @return {boolean} True if an element was removed.
      */
-    jspm_packages$github$mairatma$core$es6$array$array$$array.removeAt = function(arr, i) {
+    jspm_packages$github$alloyui$core$master$array$array$$array.removeAt = function(arr, i) {
       return Array.prototype.splice.call(arr, i, 1).length === 1;
     };
 
-    var jspm_packages$github$mairatma$core$es6$array$array$$default = jspm_packages$github$mairatma$core$es6$array$array$$array;
+    var jspm_packages$github$alloyui$core$master$array$array$$default = jspm_packages$github$alloyui$core$master$array$array$$array;
     'use strict';
 
-    var jspm_packages$github$mairatma$core$es6$string$string$$string = {};
+    var jspm_packages$github$alloyui$core$master$string$string$$string = {};
 
     /**
      * Removes the breaking spaces from the left and right of the string and
@@ -903,7 +905,7 @@
      * @param {string} str A string in which to collapse spaces.
      * @return {string} Copy of the string with normalized breaking spaces.
      */
-    jspm_packages$github$mairatma$core$es6$string$string$$string.collapseBreakingSpaces = function(str) {
+    jspm_packages$github$alloyui$core$master$string$string$$string.collapseBreakingSpaces = function(str) {
       return str.replace(/[\t\r\n ]+/g, ' ').replace(/^[\t\r\n ]+|[\t\r\n ]+$/g, '');
     };
 
@@ -916,7 +918,7 @@
      * @param {String} val Target string.
      * @return {Number} Returns the string hashcode.
      */
-    jspm_packages$github$mairatma$core$es6$string$string$$string.hashCode = function(val) {
+    jspm_packages$github$alloyui$core$master$string$string$$string.hashCode = function(val) {
       var hash = 0;
       for (var i = 0, len = val.length; i < len; i++) {
         hash = 31 * hash + val.charCodeAt(i);
@@ -934,21 +936,21 @@
      * @param {string} value The value that replaces the specified interval.
      * @return {string}
      */
-    jspm_packages$github$mairatma$core$es6$string$string$$string.replaceInterval = function(str, start, end, value) {
+    jspm_packages$github$alloyui$core$master$string$string$$string.replaceInterval = function(str, start, end, value) {
       return str.substring(0, start) + value + str.substring(end);
     };
 
-    var jspm_packages$github$mairatma$core$es6$string$string$$default = jspm_packages$github$mairatma$core$es6$string$string$$string;
+    var jspm_packages$github$alloyui$core$master$string$string$$default = jspm_packages$github$alloyui$core$master$string$string$$string;
     'use strict';
 
-    var jspm_packages$github$mairatma$core$es6$html$html$$html = {};
+    var jspm_packages$github$alloyui$core$master$html$html$$html = {};
 
     /**
      * HTML regex patterns.
      * @enum {RegExp}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns = {
+    jspm_packages$github$alloyui$core$master$html$html$$html.Patterns = {
       /**
        * @type {RegExp}
        */
@@ -1006,16 +1008,16 @@
      * @param {string} htmlString Input HTML to be compressed.
      * @return {string} Compressed version of the HTML.
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.compress = function(htmlString) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.compress = function(htmlString) {
       var preserved = {};
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveBlocks_(htmlString, preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.simplifyDoctype_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.removeComments_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.removeIntertagSpaces_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.collapseBreakingSpaces_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.removeSpacesInsideTags_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.removeSurroundingSpaces_(htmlString);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.returnBlocks_(htmlString, preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveBlocks_(htmlString, preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.simplifyDoctype_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.removeComments_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.removeIntertagSpaces_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.collapseBreakingSpaces_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.removeSpacesInsideTags_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.removeSurroundingSpaces_(htmlString);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.returnBlocks_(htmlString, preserved);
       return htmlString.trim();
     };
 
@@ -1025,8 +1027,8 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.collapseBreakingSpaces_ = function(htmlString) {
-      return jspm_packages$github$mairatma$core$es6$string$string$$default.collapseBreakingSpaces(htmlString);
+    jspm_packages$github$alloyui$core$master$html$html$$html.collapseBreakingSpaces_ = function(htmlString) {
+      return jspm_packages$github$alloyui$core$master$string$string$$default.collapseBreakingSpaces(htmlString);
     };
 
     /**
@@ -1039,7 +1041,7 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.lookupPossibleTagEnd_ = function(htmlString, openTag) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.lookupPossibleTagEnd_ = function(htmlString, openTag) {
       var tagPos = htmlString.indexOf(openTag);
       if (tagPos > -1) {
         tagPos += htmlString.substring(tagPos).indexOf('>') + 1;
@@ -1058,13 +1060,13 @@
      * @return {html} The preserved HTML.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.preserveBlocks_ = function(htmlString, preserved) {
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveOuterHtml_(htmlString, '<!--[if', '<![endif]-->', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_(htmlString, '<code', '</code', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_(htmlString, '<pre', '</pre', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_(htmlString, '<script', '</script', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_(htmlString, '<style', '</style', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_(htmlString, '<textarea', '</textarea', preserved);
+    jspm_packages$github$alloyui$core$master$html$html$$html.preserveBlocks_ = function(htmlString, preserved) {
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveOuterHtml_(htmlString, '<!--[if', '<![endif]-->', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_(htmlString, '<code', '</code', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_(htmlString, '<pre', '</pre', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_(htmlString, '<script', '</script', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_(htmlString, '<style', '</style', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_(htmlString, '<textarea', '</textarea', preserved);
       return htmlString;
     };
 
@@ -1082,14 +1084,14 @@
      * @return {html} The preserved HTML.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInnerHtml_ = function(htmlString, openTag, closeTag, preserved) {
-      var tagPosEnd = jspm_packages$github$mairatma$core$es6$html$html$$html.lookupPossibleTagEnd_(htmlString, openTag);
+    jspm_packages$github$alloyui$core$master$html$html$$html.preserveInnerHtml_ = function(htmlString, openTag, closeTag, preserved) {
+      var tagPosEnd = jspm_packages$github$alloyui$core$master$html$html$$html.lookupPossibleTagEnd_(htmlString, openTag);
       while (tagPosEnd > -1) {
         var tagEndPos = htmlString.indexOf(closeTag);
-        htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInterval_(htmlString, tagPosEnd, tagEndPos, preserved);
+        htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInterval_(htmlString, tagPosEnd, tagEndPos, preserved);
         htmlString = htmlString.replace(openTag, '%%%~1~%%%');
         htmlString = htmlString.replace(closeTag, '%%%~2~%%%');
-        tagPosEnd = jspm_packages$github$mairatma$core$es6$html$html$$html.lookupPossibleTagEnd_(htmlString, openTag);
+        tagPosEnd = jspm_packages$github$alloyui$core$master$html$html$$html.lookupPossibleTagEnd_(htmlString, openTag);
       }
       htmlString = htmlString.replace(/%%%~1~%%%/g, openTag);
       htmlString = htmlString.replace(/%%%~2~%%%/g, closeTag);
@@ -1107,10 +1109,10 @@
      * @return {string} The HTML with replaced interval.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInterval_ = function(htmlString, start, end, preserved) {
-      var blockId = '%%%~BLOCK~' + jspm_packages$github$mairatma$core$es6$core$$default.getUid() + '~%%%';
+    jspm_packages$github$alloyui$core$master$html$html$$html.preserveInterval_ = function(htmlString, start, end, preserved) {
+      var blockId = '%%%~BLOCK~' + jspm_packages$github$alloyui$core$master$core$$default.getUid() + '~%%%';
       preserved[blockId] = htmlString.substring(start, end);
-      return jspm_packages$github$mairatma$core$es6$string$string$$default.replaceInterval(htmlString, start, end, blockId);
+      return jspm_packages$github$alloyui$core$master$string$string$$default.replaceInterval(htmlString, start, end, blockId);
     };
 
     /**
@@ -1127,11 +1129,11 @@
      * @return {html} The preserved HTML.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.preserveOuterHtml_ = function(htmlString, openTag, closeTag, preserved) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.preserveOuterHtml_ = function(htmlString, openTag, closeTag, preserved) {
       var tagPos = htmlString.indexOf(openTag);
       while (tagPos > -1) {
         var tagEndPos = htmlString.indexOf(closeTag) + closeTag.length;
-        htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveInterval_(htmlString, tagPos, tagEndPos, preserved);
+        htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveInterval_(htmlString, tagPos, tagEndPos, preserved);
         tagPos = htmlString.indexOf(openTag);
       }
       return htmlString;
@@ -1144,11 +1146,11 @@
      * @return {string} The HTML without comments.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.removeComments_ = function(htmlString) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.removeComments_ = function(htmlString) {
       var preserved = {};
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveOuterHtml_(htmlString, '<![CDATA[', ']]>', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveOuterHtml_(htmlString, '<!--', '-->', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.replacePreservedBlocks_(htmlString, preserved, '');
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveOuterHtml_(htmlString, '<![CDATA[', ']]>', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveOuterHtml_(htmlString, '<!--', '-->', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.replacePreservedBlocks_(htmlString, preserved, '');
       return htmlString;
     };
 
@@ -1158,11 +1160,11 @@
      * @return {string} The HTML without spaces between tags.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.removeIntertagSpaces_ = function(htmlString) {
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.INTERTAG_CUSTOM_CUSTOM, '~%%%%%%~');
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.INTERTAG_CUSTOM_TAG, '~%%%<');
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.INTERTAG_TAG, '><');
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.INTERTAG_TAG_CUSTOM, '>%%%~');
+    jspm_packages$github$alloyui$core$master$html$html$$html.removeIntertagSpaces_ = function(htmlString) {
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.INTERTAG_CUSTOM_CUSTOM, '~%%%%%%~');
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.INTERTAG_CUSTOM_TAG, '~%%%<');
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.INTERTAG_TAG, '><');
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.INTERTAG_TAG_CUSTOM, '>%%%~');
       return htmlString;
     };
 
@@ -1172,9 +1174,9 @@
      * @return {string} The HTML without spaces inside tags.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.removeSpacesInsideTags_ = function(htmlString) {
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.TAG_END_SPACES, '$1$2');
-      htmlString = htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.TAG_QUOTE_SPACES, '=$1$2$3');
+    jspm_packages$github$alloyui$core$master$html$html$$html.removeSpacesInsideTags_ = function(htmlString) {
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.TAG_END_SPACES, '$1$2');
+      htmlString = htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.TAG_QUOTE_SPACES, '=$1$2$3');
       return htmlString;
     };
 
@@ -1184,8 +1186,8 @@
      * @return {string} The HTML without spaces surrounding tags.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.removeSurroundingSpaces_ = function(htmlString) {
-      return htmlString.replace(jspm_packages$github$mairatma$core$es6$html$html$$html.Patterns.SURROUNDING_SPACES, '$1');
+    jspm_packages$github$alloyui$core$master$html$html$$html.removeSurroundingSpaces_ = function(htmlString) {
+      return htmlString.replace(jspm_packages$github$alloyui$core$master$html$html$$html.Patterns.SURROUNDING_SPACES, '$1');
     };
 
     /**
@@ -1199,7 +1201,7 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.replacePreservedBlocks_ = function(htmlString, preserved, replaceValue) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.replacePreservedBlocks_ = function(htmlString, preserved, replaceValue) {
       for (var blockId in preserved) {
         htmlString = htmlString.replace(blockId, replaceValue);
       }
@@ -1212,10 +1214,10 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.simplifyDoctype_ = function(htmlString) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.simplifyDoctype_ = function(htmlString) {
       var preserved = {};
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.preserveOuterHtml_(htmlString, '<!DOCTYPE', '>', preserved);
-      htmlString = jspm_packages$github$mairatma$core$es6$html$html$$html.replacePreservedBlocks_(htmlString, preserved, '<!DOCTYPE html>');
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.preserveOuterHtml_(htmlString, '<!DOCTYPE', '>', preserved);
+      htmlString = jspm_packages$github$alloyui$core$master$html$html$$html.replacePreservedBlocks_(htmlString, preserved, '<!DOCTYPE html>');
       return htmlString;
     };
 
@@ -1228,14 +1230,14 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$html$html$$html.returnBlocks_ = function(htmlString, preserved) {
+    jspm_packages$github$alloyui$core$master$html$html$$html.returnBlocks_ = function(htmlString, preserved) {
       for (var blockId in preserved) {
         htmlString = htmlString.replace(blockId, preserved[blockId]);
       }
       return htmlString;
     };
 
-    var jspm_packages$github$mairatma$core$es6$html$html$$default = jspm_packages$github$mairatma$core$es6$html$html$$html;
+    var jspm_packages$github$alloyui$core$master$html$html$$default = jspm_packages$github$alloyui$core$master$html$html$$html;
     'use strict';
 
     /**
@@ -1243,31 +1245,32 @@
      * information related to strings and their prefixes. See
      * http://en.wikipedia.org/wiki/Trie.
      * @constructor
+     * @extends {Disposable}
      */
-    var jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie = function(value) {
+    var jspm_packages$github$alloyui$core$master$structs$Trie$$Trie = function(value) {
       this.value_ = value;
       this.children_ = {};
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie, jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$structs$Trie$$Trie, jspm_packages$github$alloyui$core$master$disposable$Disposable$$default);
 
     /**
      * The list of children for this tree.
      * @type {Object.<string, Trie>}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.children_ = null;
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.children_ = null;
 
     /**
      * The value associated with this tree.
      * @type {*}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.value_ = null;
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.value_ = null;
 
     /**
      * Empties the trie of all keys and values.
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.clear = function() {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.clear = function() {
       this.children_ = {};
       this.value_ = null;
     };
@@ -1276,15 +1279,15 @@
      * Creates a new trie node.
      * @return {Trie}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.createNewTrieNode = function() {
-      return new jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie();
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.createNewTrieNode = function() {
+      return new jspm_packages$github$alloyui$core$master$structs$Trie$$Trie();
     };
 
     /**
      * Disposes of this instance's object references.
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.disposeInternal = function() {
       for (var k in this.children_) {
         this.children_[k].dispose();
       }
@@ -1300,7 +1303,7 @@
      *   exist in the searched path should be created.
      * @return {!Trie}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.findKeyNode_ = function(key, createIfMissing) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.findKeyNode_ = function(key, createIfMissing) {
       var node = this;
 
       key = this.normalizeKey(key);
@@ -1319,7 +1322,7 @@
      * Returns an array with all the child nodes for this trie.
      * @return {!Array}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.getAllChildren = function() {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.getAllChildren = function() {
       var allChildren = [];
 
       for (var k in this.children_) {
@@ -1337,7 +1340,7 @@
      *   created if it doesn't exist.
      * @return {Trie}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.getChild = function(keyPart, createIfMissing) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.getChild = function(keyPart, createIfMissing) {
       var child = this.children_[keyPart];
 
       if (createIfMissing && !child) {
@@ -1353,7 +1356,7 @@
      * @param {!(Array|string)} key
      * @return {*}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.getKeyValue = function(key) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.getKeyValue = function(key) {
       var node = this.findKeyNode_(key);
 
       return node ? node.getValue() : null;
@@ -1363,7 +1366,7 @@
      * Gets this tree's value.
      * @return {*}
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.getValue = function() {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.getValue = function() {
       return this.value_;
     };
 
@@ -1372,8 +1375,8 @@
      * @param  {!(Array|string)} key The key to be normalized.
      * @return {!Array} The normalized key.
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.normalizeKey = function(key) {
-      return jspm_packages$github$mairatma$core$es6$core$$default.isString(key) ? key.split('') : key;
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.normalizeKey = function(key) {
+      return jspm_packages$github$alloyui$core$master$core$$default.isString(key) ? key.split('') : key;
     };
 
     /**
@@ -1382,7 +1385,7 @@
      *   Trie.
      * @param {Trie} child
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.setChild = function(keyPart, child) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.setChild = function(keyPart, child) {
       this.children_[keyPart] = child;
     };
 
@@ -1396,7 +1399,7 @@
      *   already exists. It will be called with the old and the new values, and
      *   the key will be set to its return value.
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.setKeyValue = function(key, value, opt_mergeFn) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.setKeyValue = function(key, value, opt_mergeFn) {
       var node = this.findKeyNode_(key, true);
 
       if (node.getValue() && opt_mergeFn) {
@@ -1412,37 +1415,38 @@
      * Sets this tree's value.
      * @param {*} value
      */
-    jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie.prototype.setValue = function(value) {
+    jspm_packages$github$alloyui$core$master$structs$Trie$$Trie.prototype.setValue = function(value) {
       this.value_ = value;
     };
 
-    var jspm_packages$github$mairatma$core$es6$structs$Trie$$default = jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie;
+    var jspm_packages$github$alloyui$core$master$structs$Trie$$default = jspm_packages$github$alloyui$core$master$structs$Trie$$Trie;
     'use strict';
 
     /**
      * A trie that can handle wildcards.
      * @param {*} value
      * @constructor
+     * @extends {Trie}
      */
-    var jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie = function(value) {
-      jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.base(this, 'constructor', value);
+    var jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie = function(value) {
+      jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.base(this, 'constructor', value);
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie, jspm_packages$github$mairatma$core$es6$structs$Trie$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie, jspm_packages$github$alloyui$core$master$structs$Trie$$default);
 
     /**
      * A token representing any single namespace.
      * @type {string}
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE = '*';
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE = '*';
 
     /**
      * Creates a new trie node.
      * @return {Trie}
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.prototype.createNewTrieNode = function() {
-      return new jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie();
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.prototype.createNewTrieNode = function() {
+      return new jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie();
     };
 
     /**
@@ -1451,7 +1455,7 @@
      * @return {!Array}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.prototype.getChildrenMatchingKeyParts_ = function(keyParts) {
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.prototype.getChildrenMatchingKeyParts_ = function(keyParts) {
       var matchingChildren = [];
 
       for (var i = 0; i < keyParts.length; i++) {
@@ -1470,7 +1474,7 @@
      * @return {!Array}
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.prototype.getKeyValue = function(key) {
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.prototype.getKeyValue = function(key) {
       key = this.normalizeKey(key);
 
       var nextKey = key.concat();
@@ -1489,7 +1493,7 @@
      * @param  {string} keyPart
      * @return {!Array}
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.prototype.getKeyValueForChildren_ = function(key, keyPart) {
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.prototype.getKeyValueForChildren_ = function(key, keyPart) {
       var values = [];
 
       var children = this.getMatchingChildren_(keyPart);
@@ -1505,45 +1509,46 @@
      * @param  {string} keyPart
      * @return {!Array.<Trie>}
      */
-    jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.prototype.getMatchingChildren_ = function(keyPart) {
+    jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.prototype.getMatchingChildren_ = function(keyPart) {
       var matchingChildren = [];
 
-      if (keyPart === jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE) {
+      if (keyPart === jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE) {
         matchingChildren = this.getAllChildren();
       } else {
         matchingChildren = this.getChildrenMatchingKeyParts_(
-          [keyPart, jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE]
+          [keyPart, jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie.TOKEN_SKIP_SINGLE]
         );
       }
 
       return matchingChildren;
     };
 
-    var jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$default = jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie;
+    var jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$default = jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie;
     'use strict';
 
     /**
      * EventEmitter utility.
      * @constructor
+     * @extends {Disposable}
      */
-    var jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter = function() {
-      this.listenersTree_ = new jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$default();
+    var jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter = function() {
+      this.listenersTree_ = new jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$default();
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter, jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter, jspm_packages$github$alloyui$core$master$disposable$Disposable$$default);
 
     /**
      * The delimiter being used for namespaces.
      * @type {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.delimiter_ = '.';
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.delimiter_ = '.';
 
     /**
      * Holds event listeners scoped by event type.
      * @type {Trie}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.listenersTree_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.listenersTree_ = null;
 
     /**
      * The maximum number of listeners allowed for each event type. If the number
@@ -1551,7 +1556,7 @@
      * @type {number}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.maxListeners_ = 10;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.maxListeners_ = 10;
 
     /**
      * The id that will be assigned to the next listener added to this event
@@ -1559,7 +1564,7 @@
      * @type {number}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.nextId_ = 1;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.nextId_ = 1;
 
     /**
      * Configuration option which determines if an event facade should be sent
@@ -1568,7 +1573,7 @@
      * @type {boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.shouldUseFacade_ = false;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.shouldUseFacade_ = false;
 
     /**
      * Adds a listener to the end of the listeners array for the specified events.
@@ -1576,7 +1581,7 @@
      * @param {!Function} listener
      * @return {!EventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.addListener = function(events, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.addListener = function(events, listener) {
       this.validateListener_(listener);
 
       events = this.normalizeEvents_(events);
@@ -1584,7 +1589,7 @@
         this.addSingleListener_(events[i], listener);
       }
 
-      return new jspm_packages$github$mairatma$core$es6$events$EventHandle$$default(this, events, listener);
+      return new jspm_packages$github$alloyui$core$master$events$EventHandle$$default(this, events, listener);
     };
 
     /**
@@ -1595,7 +1600,7 @@
      *   listener, if there is any.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.addSingleListener_ = function(event, listener, opt_origin) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.addSingleListener_ = function(event, listener, opt_origin) {
       this.emit('newListener', event, listener);
 
       var listeners = this.listenersTree_.setKeyValue(
@@ -1626,7 +1631,7 @@
      * @return {Number} The difference between the ids of the objects.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.compareListenerObjs_ = function(obj1, obj2) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.compareListenerObjs_ = function(obj1, obj2) {
       return obj1.id - obj2.id;
     };
 
@@ -1634,7 +1639,7 @@
      * Disposes of this instance's object references.
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.disposeInternal = function() {
       this.listenersTree_.dispose();
       this.listenersTree_ = null;
     };
@@ -1645,7 +1650,7 @@
      * @param {*} opt_args [arg1], [arg2], [...]
      * @return {boolean} Returns true if event had listeners, false otherwise.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.emit = function(event) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.emit = function(event) {
       var args = Array.prototype.slice.call(arguments, 1);
       var listened = false;
       var listeners = this.listeners(event);
@@ -1669,7 +1674,7 @@
      * Gets the delimiter to be used by namespaces.
      * @return {string}
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.getDelimiter = function() {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.getDelimiter = function() {
       return this.delimiter_;
     };
 
@@ -1679,7 +1684,7 @@
      * facade will be passed as the first argument of the listener.
      * @return {boolean}
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.getShouldUseFacade = function() {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.getShouldUseFacade = function() {
       return this.shouldUseFacade_;
     };
 
@@ -1688,7 +1693,7 @@
      * @param {string} event
      * @return {Array} Array of listeners.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.listeners = function(event) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.listeners = function(event) {
       var listenerArrays = this.searchListenerTree_(event);
       var listeners = [];
 
@@ -1717,13 +1722,13 @@
      * @param {!Function} listener
      * @return {!EventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.many = function(events, amount, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.many = function(events, amount, listener) {
       events = this.normalizeEvents_(events);
       for (var i = 0; i < events.length; i++) {
         this.many_(events[i], amount, listener);
       }
 
-      return new jspm_packages$github$mairatma$core$es6$events$EventHandle$$default(this, events, listener);
+      return new jspm_packages$github$alloyui$core$master$events$EventHandle$$default(this, events, listener);
     };
 
     /**
@@ -1736,7 +1741,7 @@
      * @param {!Function} listener
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.many_ = function(event, amount, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.many_ = function(event, amount, listener) {
       var self = this;
 
       if (amount <= 0) {
@@ -1761,7 +1766,7 @@
      * @return {boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.matchesListener_ = function(listenerObj, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.matchesListener_ = function(listenerObj, listener) {
       return listenerObj.fn === listener ||
         (listenerObj.origin && listenerObj.origin === listener);
     };
@@ -1773,7 +1778,7 @@
      * @return {!Object}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.mergeListenerArrays_ = function(arr1, arr2) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.mergeListenerArrays_ = function(arr1, arr2) {
       for (var i = 0; i < arr2.length; i++) {
         arr1.push(arr2[i]);
       }
@@ -1786,8 +1791,8 @@
      * @return {!Array}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.normalizeEvents_ = function(events) {
-      return jspm_packages$github$mairatma$core$es6$core$$default.isString(events) ? [events] : events;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.normalizeEvents_ = function(events) {
+      return jspm_packages$github$alloyui$core$master$core$$default.isString(events) ? [events] : events;
     };
 
     /**
@@ -1797,7 +1802,7 @@
      * @param {!Function} listener
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.off = function(events, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.off = function(events, listener) {
       this.validateListener_(listener);
 
       var listenerArrays = this.searchListenerTree_(events);
@@ -1814,7 +1819,7 @@
      * @param {!Function} listener
      * @return {!EventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.on = jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.addListener;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.on = jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.addListener;
 
     /**
      * Adds a one time listener for the events. This listener is invoked only the
@@ -1823,7 +1828,7 @@
      * @param {!Function} listener
      * @return {!EventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.once = function(events, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.once = function(events, listener) {
       return this.many(events, 1, listener);
     };
 
@@ -1834,7 +1839,7 @@
      * @param {(Array|string)=} opt_events
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.removeAllListeners = function(opt_events) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.removeAllListeners = function(opt_events) {
       if (!opt_events) {
         this.listenersTree_.clear();
         return this;
@@ -1849,7 +1854,7 @@
      * @return {!Object} Returns emitter, so calls can be chained.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.removeAllListenersForEvents_ = function(events) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.removeAllListenersForEvents_ = function(events) {
       events = this.normalizeEvents_(events);
       for (var i = 0; i < events.length; i++) {
         this.listenersTree_.setKeyValue(this.splitNamespaces_(events[i]), []);
@@ -1865,7 +1870,7 @@
      * @param {!Function} listener
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.removeListener = jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.off;
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.removeListener = jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.off;
 
     /**
      * Removes all listener objects from the given array that match the given
@@ -1874,7 +1879,7 @@
      * @param {!Function} listener
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.removeMatchingListenerObjs_ = function(listenerObjects, listener) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.removeMatchingListenerObjs_ = function(listenerObjects, listener) {
       for (var i = listenerObjects.length - 1; i >= 0; i--) {
         if (this.matchesListener_(listenerObjects[i], listener)) {
           listenerObjects.splice(i, 1);
@@ -1888,7 +1893,7 @@
      * @return {!Array.<Array>} An array of listener arrays returned by the tree.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.searchListenerTree_ = function(events) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.searchListenerTree_ = function(events) {
       var values = [];
 
       events = this.normalizeEvents_(events);
@@ -1906,7 +1911,7 @@
      * @param {string} delimiter
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.setDelimiter = function(delimiter) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.setDelimiter = function(delimiter) {
       this.delimiter_ = delimiter;
       return this;
     };
@@ -1919,7 +1924,7 @@
      * @param {number} max The maximum number of listeners.
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.setMaxListeners = function(max) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.setMaxListeners = function(max) {
       this.maxListeners_ = max;
       return this;
     };
@@ -1931,7 +1936,7 @@
      * @param {boolean} shouldUseFacade
      * @return {!Object} Returns emitter, so calls can be chained.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.setShouldUseFacade = function(shouldUseFacade) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.setShouldUseFacade = function(shouldUseFacade) {
       this.shouldUseFacade_ = shouldUseFacade;
       return this;
     };
@@ -1942,7 +1947,7 @@
      * @return {!Array}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.splitNamespaces_ = function(event) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.splitNamespaces_ = function(event) {
       return event.split(this.getDelimiter());
     };
 
@@ -1951,13 +1956,13 @@
      * @param  {*} listener
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter.prototype.validateListener_ = function(listener) {
-      if (!jspm_packages$github$mairatma$core$es6$core$$default.isFunction(listener)) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter.prototype.validateListener_ = function(listener) {
+      if (!jspm_packages$github$alloyui$core$master$core$$default.isFunction(listener)) {
         throw new TypeError('Listener must be a function');
       }
     };
 
-    var jspm_packages$github$mairatma$core$es6$events$EventEmitter$$default = jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter;
+    var jspm_packages$github$alloyui$core$master$events$EventEmitter$$default = jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter;
 
     'use strict';
 
@@ -1969,7 +1974,7 @@
      * @extends {IThenable.<TYPE>}
      * @template TYPE
      */
-    var jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable = function() {};
+    var jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable = function() {};
 
     /**
      * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -1998,7 +2003,7 @@
      *     result of the fulfillment or rejection callback.
      * @template RESULT,THIS
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.prototype.then = function() {};
+    jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.prototype.then = function() {};
 
 
     /**
@@ -2009,7 +2014,7 @@
      *
      * @const
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.IMPLEMENTED_BY_PROP = '$goog_Thenable';
+    jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.IMPLEMENTED_BY_PROP = '$goog_Thenable';
 
 
     /**
@@ -2022,7 +2027,7 @@
      * @param {function(new:Thenable,...[?])} ctor The class constructor. The
      *     corresponding class must have already implemented the interface.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.addImplementation = function(ctor) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.addImplementation = function(ctor) {
       ctor.prototype.then = ctor.prototype.then;
       ctor.prototype.$goog_Thenable = true;
     };
@@ -2033,7 +2038,7 @@
      * @return {boolean} Whether a given instance implements {@code Thenable}.
      *     The class/superclass of the instance must call {@code addImplementation}.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.isImplementedBy = function(object) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.isImplementedBy = function(object) {
       if (!object) {
         return false;
       }
@@ -2059,7 +2064,7 @@
      * @return {!Function} A partially-applied form of the function bind() was
      *     invoked as a method of.
      */
-    var jspm_packages$github$mairatma$core$es6$promise$Promise$$partial = function(fn) {
+    var jspm_packages$github$alloyui$core$master$promise$Promise$$partial = function(fn) {
       var args = Array.prototype.slice.call(arguments, 1);
       return function() {
         // Clone the array (with slice()) and append additional arguments
@@ -2071,7 +2076,7 @@
     };
 
 
-    var jspm_packages$github$mairatma$core$es6$promise$Promise$$async = {};
+    var jspm_packages$github$alloyui$core$master$promise$Promise$$async = {};
 
 
     /**
@@ -2081,9 +2086,9 @@
      * processed.
      * @param {*} exception
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.throwException = function(exception) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.throwException = function(exception) {
       // Each throw needs to be in its own context.
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick(function() {
+      jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick(function() {
         throw exception;
       });
     };
@@ -2097,48 +2102,48 @@
      *     the provided function.
      * @template THIS
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run = function(callback, opt_context) {
-      if (!jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueueScheduled_) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.run = function(callback, opt_context) {
+      if (!jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueueScheduled_) {
         // Nothing is currently scheduled, schedule it now.
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick(jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.processWorkQueue);
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueueScheduled_ = true;
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick(jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.processWorkQueue);
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueueScheduled_ = true;
       }
 
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueue_.push(
-        new jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.WorkItem_(callback, opt_context));
+      jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueue_.push(
+        new jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.WorkItem_(callback, opt_context));
     };
 
 
     /** @private {boolean} */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueueScheduled_ = false;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueueScheduled_ = false;
 
 
     /** @private {!Array.<!async.run.WorkItem_>} */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueue_ = [];
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueue_ = [];
 
     /**
      * Run any pending async.run work items. This function is not intended
      * for general use, but for use by entry point handlers to run items ahead of
      * async.nextTick.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.processWorkQueue = function() {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.processWorkQueue = function() {
       // NOTE: additional work queue items may be pushed while processing.
-      while (jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueue_.length) {
+      while (jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueue_.length) {
         // Don't let the work queue grow indefinitely.
-        var workItems = jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueue_;
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueue_ = [];
+        var workItems = jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueue_;
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueue_ = [];
         for (var i = 0; i < workItems.length; i++) {
           var workItem = workItems[i];
           try {
             workItem.fn.call(workItem.scope);
           } catch (e) {
-            jspm_packages$github$mairatma$core$es6$promise$Promise$$async.throwException(e);
+            jspm_packages$github$alloyui$core$master$promise$Promise$$async.throwException(e);
           }
         }
       }
 
       // There are no more work items, reset the work queue.
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.workQueueScheduled_ = false;
+      jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.workQueueScheduled_ = false;
     };
 
 
@@ -2151,7 +2156,7 @@
      * @param {function()} fn
      * @param {Object|null|undefined} scope
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run.WorkItem_ = function(fn, scope) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.run.WorkItem_ = function(fn, scope) {
       /** @const */
       this.fn = fn;
       /** @const */
@@ -2168,22 +2173,22 @@
      * @param {SCOPE=} opt_context Object in whose scope to call the listener.
      * @template SCOPE
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick = function(callback, opt_context) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick = function(callback, opt_context) {
       var cb = callback;
       if (opt_context) {
-        cb = jspm_packages$github$mairatma$core$es6$core$$default.bind(callback, opt_context);
+        cb = jspm_packages$github$alloyui$core$master$core$$default.bind(callback, opt_context);
       }
-      cb = jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.wrapCallback_(cb);
+      cb = jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.wrapCallback_(cb);
       // Introduced and currently only supported by IE10.
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(window.setImmediate)) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(window.setImmediate)) {
         window.setImmediate(cb);
         return;
       }
       // Look for and cache the custom fallback version of setImmediate.
-      if (!jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.setImmediate_) {
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.setImmediate_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.getSetImmediateEmulator_();
+      if (!jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.setImmediate_) {
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.setImmediate_ = jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.getSetImmediateEmulator_();
       }
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.setImmediate_(cb);
+      jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.setImmediate_(cb);
     };
 
 
@@ -2192,7 +2197,7 @@
      * @type {function(function())}
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.setImmediate_ = null;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.setImmediate_ = null;
 
 
     /**
@@ -2201,7 +2206,7 @@
      * @return {function(function())} The "setImmediate" implementation.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.getSetImmediateEmulator_ = function() {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.getSetImmediateEmulator_ = function() {
       // Create a private message channel and use it to postMessage empty messages
       // to ourselves.
       var Channel = window.MessageChannel;
@@ -2225,7 +2230,7 @@
           doc.close();
           var message = 'callImmediate' + Math.random();
           var origin = win.location.protocol + '//' + win.location.host;
-          var onmessage = jspm_packages$github$mairatma$core$es6$core$$default.bind(function(e) {
+          var onmessage = jspm_packages$github$alloyui$core$master$core$$default.bind(function(e) {
             // Validate origin and message to make sure that this message was
             // intended for us.
             if (e.origin !== origin && e.data !== message) {
@@ -2293,7 +2298,7 @@
      * @return {function()} The wrapped callback.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick.wrapCallback_ = function(opt_returnValue) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick.wrapCallback_ = function(opt_returnValue) {
       return opt_returnValue;
     };
 
@@ -2346,13 +2351,13 @@
      * @implements {Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    var jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise = function(resolver, opt_context) {
+    var jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise = function(resolver, opt_context) {
       /**
        * The internal state of this Promise. Either PENDING, FULFILLED, REJECTED, or
        * BLOCKED.
        * @private {CancellablePromise.State_}
        */
-      this.state_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING;
+      this.state_ = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING;
 
       /**
        * The resolved result of the Promise. Immutable once set with either a
@@ -2380,7 +2385,7 @@
        */
       this.executing_ = false;
 
-      if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
+      if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
         /**
          * A timeout ID used when the {@code UNHANDLED_REJECTION_DELAY} is greater
          * than 0 milliseconds. The ID is set when the Promise is rejected, and
@@ -2392,7 +2397,7 @@
          * @private {number}
          */
         this.unhandledRejectionId_ = 0;
-      } else if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
+      } else if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
         /**
          * When the {@code UNHANDLED_REJECTION_DELAY} is set to 0 milliseconds, a
          * boolean that is set if the Promise is rejected, and reset to false if an
@@ -2408,12 +2413,12 @@
         var self = this;
         resolver.call(
           opt_context, function(value) {
-            self.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.FULFILLED, value);
+            self.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.FULFILLED, value);
           }, function(reason) {
-            self.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED, reason);
+            self.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED, reason);
           });
       } catch (e) {
-        this.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED, e);
+        this.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED, e);
       }
     };
 
@@ -2426,7 +2431,7 @@
      * Rejections are rethrown as quickly as possible by default. A negative value
      * disables rejection handling entirely.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY = 0;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY = 0;
 
 
     /**
@@ -2435,7 +2440,7 @@
      * @enum {number}
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_ = {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_ = {
       /** The Promise is waiting for resolution. */
       PENDING: 0,
 
@@ -2462,7 +2467,7 @@
      * }}
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CallbackEntry_ = null;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CallbackEntry_ = null;
 
 
     /**
@@ -2471,8 +2476,8 @@
      *     with the given value.
      * @template TYPE
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.resolve = function(opt_value) {
-      return new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.resolve = function(opt_value) {
+      return new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve) {
           resolve(opt_value);
         });
     };
@@ -2483,8 +2488,8 @@
      * @return {!CancellablePromise} A new Promise that is immediately rejected with the
      *     given reason.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.reject = function(opt_reason) {
-      return new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve, reject) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.reject = function(opt_reason) {
+      return new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve, reject) {
           reject(opt_reason);
         });
     };
@@ -2496,8 +2501,8 @@
      *     first Promise (or Promise-like) input to complete.
      * @template TYPE
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.race = function(promises) {
-      return new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve, reject) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.race = function(promises) {
+      return new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve, reject) {
           if (!promises.length) {
             resolve(undefined);
           }
@@ -2515,8 +2520,8 @@
      *     successfully fulfilled, or is rejected by the first rejection result.
      * @template TYPE
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.all = function(promises) {
-      return new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve, reject) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.all = function(promises) {
+      return new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve, reject) {
           var toFulfill = promises.length;
           var values = [];
 
@@ -2538,7 +2543,7 @@
           };
 
           for (var i = 0, promise; (promise = promises[i]); i++) {
-            promise.then(jspm_packages$github$mairatma$core$es6$promise$Promise$$partial(onFulfill, i), onReject);
+            promise.then(jspm_packages$github$alloyui$core$master$promise$Promise$$partial(onFulfill, i), onReject);
           }
         });
     };
@@ -2551,8 +2556,8 @@
      *     rejection reason if all inputs are rejected.
      * @template TYPE
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.firstFulfilled = function(promises) {
-      return new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve, reject) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.firstFulfilled = function(promises) {
+      return new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve, reject) {
           var toReject = promises.length;
           var reasons = [];
 
@@ -2574,7 +2579,7 @@
           };
 
           for (var i = 0, promise; (promise = promises[i]); i++) {
-            promise.then(onFulfill, jspm_packages$github$mairatma$core$es6$promise$Promise$$partial(onReject, i));
+            promise.then(onFulfill, jspm_packages$github$alloyui$core$master$promise$Promise$$partial(onReject, i));
           }
         });
     };
@@ -2595,13 +2600,13 @@
      *
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.then = function(opt_onFulfilled, opt_onRejected, opt_context) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.then = function(opt_onFulfilled, opt_onRejected, opt_context) {
       return this.addChildPromise_(
-        jspm_packages$github$mairatma$core$es6$core$$default.isFunction(opt_onFulfilled) ? opt_onFulfilled : null,
-        jspm_packages$github$mairatma$core$es6$core$$default.isFunction(opt_onRejected) ? opt_onRejected : null,
+        jspm_packages$github$alloyui$core$master$core$$default.isFunction(opt_onFulfilled) ? opt_onFulfilled : null,
+        jspm_packages$github$alloyui$core$master$core$$default.isFunction(opt_onRejected) ? opt_onRejected : null,
         opt_context);
     };
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.addImplementation(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise);
+    jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.addImplementation(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise);
 
 
     /**
@@ -2625,13 +2630,13 @@
      * @return {!CancellablePromise.<TYPE>} This Promise, for chaining additional calls.
      * @template THIS
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.thenAlways = function(onResolved, opt_context) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.thenAlways = function(onResolved, opt_context) {
       var callback = function() {
         try {
           // Ensure that no arguments are passed to onResolved.
           onResolved.call(opt_context);
         } catch (err) {
-          jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.handleRejection_.call(null, err);
+          jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.handleRejection_.call(null, err);
         }
       };
 
@@ -2657,7 +2662,7 @@
      *     callback.
      * @template THIS
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.thenCatch = function(onRejected, opt_context) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.thenCatch = function(onRejected, opt_context) {
       return this.addChildPromise_(null, onRejected, opt_context);
     };
 
@@ -2674,10 +2679,10 @@
      * @param {string=} opt_message An optional debugging message for describing the
      *     cancellation reason.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.cancel = function(opt_message) {
-      if (this.state_ === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING) {
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run(function() {
-          var err = new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError(opt_message);
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.cancel = function(opt_message) {
+      if (this.state_ === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING) {
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.run(function() {
+          var err = new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError(opt_message);
           this.cancelInternal_(err);
         }, this);
       }
@@ -2690,13 +2695,13 @@
      * @param {!Error} err The cancellation error.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.cancelInternal_ = function(err) {
-      if (this.state_ === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.cancelInternal_ = function(err) {
+      if (this.state_ === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING) {
         if (this.parent_) {
           // Cancel the Promise and remove it from the parent's child list.
           this.parent_.cancelChild_(this, err);
         } else {
-          this.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED, err);
+          this.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED, err);
         }
       }
     };
@@ -2712,7 +2717,7 @@
      * @param {!Error} err The cancel error to use for rejecting the Promise.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.cancelChild_ = function(childPromise, err) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.cancelChild_ = function(childPromise, err) {
       if (!this.callbackEntries_) {
         return;
       }
@@ -2737,12 +2742,12 @@
       // If the child Promise was the only child, cancel this Promise as well.
       // Otherwise, reject only the child Promise with the cancel error.
       if (childIndex >= 0) {
-        if (this.state_ === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING && childCount === 1) {
+        if (this.state_ === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING && childCount === 1) {
           this.cancelInternal_(err);
         } else {
           var callbackEntry = this.callbackEntries_.splice(childIndex, 1)[0];
           this.executeCallback_(
-            callbackEntry, jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED, err);
+            callbackEntry, jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED, err);
         }
       }
     };
@@ -2757,10 +2762,10 @@
      *     the Promise is resolved.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.addCallbackEntry_ = function(callbackEntry) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.addCallbackEntry_ = function(callbackEntry) {
       if ((!this.callbackEntries_ || !this.callbackEntries_.length) &&
-        (this.state_ === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.FULFILLED ||
-        this.state_ === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED)) {
+        (this.state_ === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.FULFILLED ||
+        this.state_ === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED)) {
         this.scheduleCallbacks_();
       }
       if (!this.callbackEntries_) {
@@ -2789,7 +2794,7 @@
      * @template RESULT,THIS
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.addChildPromise_ = function(
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.addChildPromise_ = function(
     onFulfilled, onRejected, opt_context) {
 
       var callbackEntry = {
@@ -2798,7 +2803,7 @@
         onRejected: null
       };
 
-      callbackEntry.child = new jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise(function(resolve, reject) {
+      callbackEntry.child = new jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise(function(resolve, reject) {
         // Invoke onFulfilled, or resolve with the parent's value if absent.
         callbackEntry.onFulfilled = onFulfilled ? function(value) {
           try {
@@ -2813,8 +2818,8 @@
         callbackEntry.onRejected = onRejected ? function(reason) {
           try {
             var result = onRejected.call(opt_context, reason);
-            if (!jspm_packages$github$mairatma$core$es6$core$$default.isDef(result) &&
-              reason instanceof jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError) {
+            if (!jspm_packages$github$alloyui$core$master$core$$default.isDef(result) &&
+              reason instanceof jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError) {
               // Propagate cancellation to children if no other result is returned.
               reject(reason);
             } else {
@@ -2839,12 +2844,12 @@
      * @param {TYPE} value
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.unblockAndFulfill_ = function(value) {
-      if (this.state_ !== jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.BLOCKED) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.unblockAndFulfill_ = function(value) {
+      if (this.state_ !== jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.BLOCKED) {
         throw new Error('CancellablePromise is not blocked.');
       }
-      this.state_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING;
-      this.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.FULFILLED, value);
+      this.state_ = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING;
+      this.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.FULFILLED, value);
     };
 
 
@@ -2854,12 +2859,12 @@
      * @param {*} reason
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.unblockAndReject_ = function(reason) {
-      if (this.state_ !== jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.BLOCKED) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.unblockAndReject_ = function(reason) {
+      if (this.state_ !== jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.BLOCKED) {
         throw new Error('CancellablePromise is not blocked.');
       }
-      this.state_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING;
-      this.resolve_(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED, reason);
+      this.state_ = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING;
+      this.resolve_(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED, reason);
     };
 
 
@@ -2880,30 +2885,30 @@
      * @param {*} x The result to apply to the Promise.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.resolve_ = function(state, x) {
-      if (this.state_ !== jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.PENDING) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.resolve_ = function(state, x) {
+      if (this.state_ !== jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.PENDING) {
         return;
       }
 
       if (this === x) {
-        state = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED;
+        state = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED;
         x = new TypeError('CancellablePromise cannot resolve to itself');
 
-      } else if (jspm_packages$github$mairatma$core$es6$promise$Promise$$Thenable.isImplementedBy(x)) {
+      } else if (jspm_packages$github$alloyui$core$master$promise$Promise$$Thenable.isImplementedBy(x)) {
         x = /** @type {!Thenable} */ (x);
-        this.state_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.BLOCKED;
+        this.state_ = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.BLOCKED;
         x.then(this.unblockAndFulfill_, this.unblockAndReject_, this);
         return;
 
-      } else if (jspm_packages$github$mairatma$core$es6$core$$default.isObject(x)) {
+      } else if (jspm_packages$github$alloyui$core$master$core$$default.isObject(x)) {
         try {
           var then = x.then;
-          if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(then)) {
+          if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(then)) {
             this.tryThen_(x, then);
             return;
           }
         } catch (e) {
-          state = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED;
+          state = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED;
           x = e;
         }
       }
@@ -2912,9 +2917,9 @@
       this.state_ = state;
       this.scheduleCallbacks_();
 
-      if (state === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.REJECTED &&
-        !(x instanceof jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError)) {
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.addUnhandledRejection_(this, x);
+      if (state === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.REJECTED &&
+        !(x instanceof jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError)) {
+        jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.addUnhandledRejection_(this, x);
       }
     };
 
@@ -2933,8 +2938,8 @@
      * @param {!Function} then The {@code then} method of the Thenable object.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.tryThen_ = function(thenable, then) {
-      this.state_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.BLOCKED;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.tryThen_ = function(thenable, then) {
+      this.state_ = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.BLOCKED;
       var promise = this;
       var called = false;
 
@@ -2976,10 +2981,10 @@
      *
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.scheduleCallbacks_ = function() {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.scheduleCallbacks_ = function() {
       if (!this.executing_) {
         this.executing_ = true;
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run(this.executeCallbacks_, this);
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.run(this.executeCallbacks_, this);
       }
     };
 
@@ -2989,7 +2994,7 @@
      *
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.executeCallbacks_ = function() {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.executeCallbacks_ = function() {
       while (this.callbackEntries_ && this.callbackEntries_.length) {
         var entries = this.callbackEntries_;
         this.callbackEntries_ = [];
@@ -3013,9 +3018,9 @@
      * @param {*} result The resolved result of the Promise.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.executeCallback_ = function(
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.executeCallback_ = function(
     callbackEntry, state, result) {
-      if (state === jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.State_.FULFILLED) {
+      if (state === jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.State_.FULFILLED) {
         callbackEntry.onFulfilled(result);
       } else {
         this.removeUnhandledRejection_();
@@ -3031,14 +3036,14 @@
      *
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.prototype.removeUnhandledRejection_ = function() {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.prototype.removeUnhandledRejection_ = function() {
       var p;
-      if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
+      if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
         for (p = this; p && p.unhandledRejectionId_; p = p.parent_) {
           clearTimeout(p.unhandledRejectionId_);
           p.unhandledRejectionId_ = 0;
         }
-      } else if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
+      } else if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
         for (p = this; p && p.hadUnhandledRejection_; p = p.parent_) {
           p.hadUnhandledRejection_ = false;
         }
@@ -3057,17 +3062,17 @@
      * @param {*} reason The Promise rejection reason.
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.addUnhandledRejection_ = function(promise, reason) {
-      if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.addUnhandledRejection_ = function(promise, reason) {
+      if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY > 0) {
         promise.unhandledRejectionId_ = setTimeout(function() {
-          jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.handleRejection_.call(null, reason);
-        }, jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY);
+          jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.handleRejection_.call(null, reason);
+        }, jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY);
 
-      } else if (jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
+      } else if (jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.UNHANDLED_REJECTION_DELAY === 0) {
         promise.hadUnhandledRejection_ = true;
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.run(function() {
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.run(function() {
           if (promise.hadUnhandledRejection_) {
-            jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.handleRejection_.call(null, reason);
+            jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.handleRejection_.call(null, reason);
           }
         });
       }
@@ -3080,7 +3085,7 @@
      * @type {function(*)}
      * @private
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.handleRejection_ = jspm_packages$github$mairatma$core$es6$promise$Promise$$async.throwException;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.handleRejection_ = jspm_packages$github$alloyui$core$master$promise$Promise$$async.throwException;
 
 
     /**
@@ -3095,8 +3100,8 @@
      * @param {function(*)} handler A function that will be called with reasons from
      *     rejected Promises. Defaults to {@code async.throwException}.
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.setUnhandledRejectionHandler = function(handler) {
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.handleRejection_ = handler;
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.setUnhandledRejectionHandler = function(handler) {
+      jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.handleRejection_ = handler;
     };
 
 
@@ -3109,18 +3114,18 @@
      * @extends {Error}
      * @final
      */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError = function(opt_message) {
-      jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError.base(this, 'constructor', opt_message);
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError = function(opt_message) {
+      jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError.base(this, 'constructor', opt_message);
 
       if (opt_message) {
         this.message = opt_message;
       }
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError, Error);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError, Error);
 
 
     /** @override */
-    jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise.CancellationError.prototype.name = 'cancel';
+    jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise.CancellationError.prototype.name = 'cancel';
 
     'use strict';
 
@@ -3130,19 +3135,20 @@
      * See the `addAttr` method for a complete list of available attribute
      * configuration options.
      * @constructor
+     * @extends {EventEmitter}
      */
-    var jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute = function(opt_config) {
-      jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.base(this, 'constructor');
+    var jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute = function(opt_config) {
+      jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.base(this, 'constructor');
       this.attrsInfo_ = {};
       this.addAttrsFromStaticHint_(opt_config);
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute, jspm_packages$github$mairatma$core$es6$events$EventEmitter$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute, jspm_packages$github$alloyui$core$master$events$EventEmitter$$default);
 
     /**
      * Constants that represent the states that an attribute can be in.
      * @type {Object}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States = {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States = {
       UNINITIALIZED: 0,
       INITIALIZING: 1,
       INITIALIZING_DEFAULT: 2,
@@ -3154,7 +3160,7 @@
      * @type {!Object<string, !Object>}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.attrsInfo_ = null;
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.attrsInfo_ = null;
 
     /**
      * Object with information about the batch event that is currently scheduled, or
@@ -3162,7 +3168,7 @@
      * @type {Object}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.scheduledBatchData_ = null;
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.scheduledBatchData_ = null;
 
     /**
      * Adds the given attribute.
@@ -3183,19 +3189,19 @@
      * @param {*} initialValue The initial value of the new attribute. This value has higher
      *   precedence than the default value specified in this attribute's configuration.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.addAttr = function(name, config, initialValue) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.addAttr = function(name, config, initialValue) {
       this.assertValidAttrName_(name);
 
       this.attrsInfo_[name] = {
         config: config || {},
         initialValue: initialValue,
-        state: jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.UNINITIALIZED
+        state: jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.UNINITIALIZED
       };
 
       Object.defineProperty(this, name, {
         configurable: true,
-        get: jspm_packages$github$mairatma$core$es6$core$$default.bind(this.getAttrValue_, this, name),
-        set: jspm_packages$github$mairatma$core$es6$core$$default.bind(this.setAttrValue_, this, name)
+        get: jspm_packages$github$alloyui$core$master$core$$default.bind(this.getAttrValue_, this, name),
+        set: jspm_packages$github$alloyui$core$master$core$$default.bind(this.setAttrValue_, this, name)
       });
     };
 
@@ -3207,7 +3213,7 @@
      *   attributes to their initial values. These values have higher precedence than the
      *   default values specified in the attribute configurations.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.addAttrs = function(configs, initialValues) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.addAttrs = function(configs, initialValues) {
       initialValues = initialValues || {};
       var names = Object.keys(configs);
 
@@ -3222,8 +3228,8 @@
      *     of all the attributes to be added to their configuration objects.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.addAttrsFromStaticHint_ = function(config) {
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'ATTRS', this.mergeAttrs_);
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.addAttrsFromStaticHint_ = function(config) {
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'ATTRS', this.mergeAttrs_);
       this.addAttrs(this.constructor.ATTRS_MERGED, config);
     };
 
@@ -3233,7 +3239,7 @@
      * @param {string} name The name to be validated.
      * @throws {Error}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.assertValidAttrName_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.assertValidAttrName_ = function(name) {
       if (name === 'attrs') {
         throw new Error('It\'s not allowed to create an attribute with the name "attrs".');
       }
@@ -3245,11 +3251,11 @@
      * @return {Boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.canWrite_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.canWrite_ = function(name) {
       this.initAttr_(name);
 
       var info = this.attrsInfo_[name];
-      return !info.config.initOnly || info.state !== jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZED;
+      return !info.config.initOnly || info.state !== jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZED;
     };
 
     /**
@@ -3261,12 +3267,12 @@
      * @return {*} The return value of the called function.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.callFunction_ = function(fn) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.callFunction_ = function(fn) {
       var args = Array.prototype.slice.call(arguments, 1);
 
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isString(fn)) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isString(fn)) {
         return this[fn].apply(this, args);
-      } else if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(fn)) {
+      } else if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(fn)) {
         return fn.apply(this, args);
       }
     };
@@ -3277,7 +3283,7 @@
      * @param {*} value The value to be set.
      * @return {*} The final value to be set.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.callSetter_ = function(name, value) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.callSetter_ = function(name, value) {
       var info = this.attrsInfo_[name];
       var config = info.config;
       if (config.setter) {
@@ -3292,7 +3298,7 @@
      * @param {*} value The value to be validated.
      * @return {Boolean} Flag indicating if value is valid or not.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.callValidator_ = function(name, value) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.callValidator_ = function(name, value) {
       var info = this.attrsInfo_[name];
       var config = info.config;
       if (config.validator) {
@@ -3304,7 +3310,7 @@
     /**
      * @inheritDoc
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.disposeInternal = function() {
       this.attrsInfo_ = null;
       this.scheduledBatchData_ = null;
     };
@@ -3313,7 +3319,7 @@
      * Emits the attribute change batch event.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.emitBatchEvent_ = function() {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.emitBatchEvent_ = function() {
       var data = this.scheduledBatchData_;
       this.scheduledBatchData_ = null;
       this.emit('attrsChanged', data);
@@ -3323,7 +3329,7 @@
      * Returns an object that maps all attribute names to their values.
      * @return {Object.<string, *>}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.getAttrs = function() {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.getAttrs = function() {
       var attrsMap = {};
       var names = Object.keys(this.attrsInfo_);
 
@@ -3341,7 +3347,7 @@
      * @return {*}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.getAttrValue_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.getAttrValue_ = function(name) {
       this.initAttr_(name);
 
       return this.attrsInfo_[name].value;
@@ -3354,7 +3360,7 @@
      * @param {*} prevVal The previous value of the attribute.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.informChange_ = function(name, prevVal) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.informChange_ = function(name, prevVal) {
       if (this.shouldInformChange_(name, prevVal)) {
         var data = {
           attrName: name,
@@ -3371,19 +3377,19 @@
      * @param {string} name The name of the attribute.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.initAttr_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.initAttr_ = function(name) {
       var info = this.attrsInfo_[name];
-      if (info.state !== jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.UNINITIALIZED) {
+      if (info.state !== jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.UNINITIALIZED) {
         return;
       }
 
-      info.state = jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZING;
+      info.state = jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZING;
       this.setInitialValue_(name);
       if (!info.written) {
-        info.state = jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZING_DEFAULT;
+        info.state = jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZING_DEFAULT;
         this.setDefaultValue_(name);
       }
-      info.state = jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZED;
+      info.state = jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZED;
     };
 
     /**
@@ -3391,15 +3397,15 @@
      * @param {!Array} values The values to be merged.
      * @return {!Object} The merged value.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.mergeAttrs_ = function(values) {
-      return jspm_packages$github$mairatma$core$es6$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.mergeAttrs_ = function(values) {
+      return jspm_packages$github$alloyui$core$master$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
     };
 
     /**
      * Removes the requested attribute.
      * @param {string} name The name of the attribute.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.removeAttr = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.removeAttr = function(name) {
       this.attrsInfo_[name] = null;
       delete this[name];
     };
@@ -3409,9 +3415,9 @@
      * @param {!Object} attrChangeData Information about an attribute's update.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.scheduleBatchEvent_ = function(attrChangeData) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.scheduleBatchEvent_ = function(attrChangeData) {
       if (!this.scheduledBatchData_) {
-        jspm_packages$github$mairatma$core$es6$promise$Promise$$async.nextTick(this.emitBatchEvent_, this);
+        jspm_packages$github$alloyui$core$master$promise$Promise$$async.nextTick(this.emitBatchEvent_, this);
         this.scheduledBatchData_ = {
           changes: {}
         };
@@ -3431,7 +3437,7 @@
      * @param {!Object.<string,*>} values A map of attribute names to the values they
      *   should be set to.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.setAttrs = function(values) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.setAttrs = function(values) {
       var names = Object.keys(values);
 
       for (var i = 0; i < names.length; i++) {
@@ -3446,7 +3452,7 @@
      * @param {*} value The new value of the attribute.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.setAttrValue_ = function(name, value) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.setAttrValue_ = function(name, value) {
       if (!this.canWrite_(name) || !this.validateAttrValue_(name, value)) {
         return;
       }
@@ -3463,7 +3469,7 @@
      * @param {string} name The name of the attribute.
      * @return {*}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.setDefaultValue_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.setDefaultValue_ = function(name) {
       var config = this.attrsInfo_[name].config;
 
       if (config.value) {
@@ -3478,7 +3484,7 @@
      * @param {string} name The name of the attribute.
      * @return {*}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.setInitialValue_ = function(name) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.setInitialValue_ = function(name) {
       var info = this.attrsInfo_[name];
       if (info.initialValue !== undefined) {
         this[name] = info.initialValue;
@@ -3497,10 +3503,10 @@
      * @param {*} prevVal The previous value of the attribute.
      * @return {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.shouldInformChange_ = function(name, prevVal) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.shouldInformChange_ = function(name, prevVal) {
       var info = this.attrsInfo_[name];
-      return (info.state === jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZED) &&
-      (jspm_packages$github$mairatma$core$es6$core$$default.isObject(prevVal) || prevVal !== this[name]);
+      return (info.state === jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZED) &&
+      (jspm_packages$github$alloyui$core$master$core$$default.isObject(prevVal) || prevVal !== this[name]);
     };
 
     /**
@@ -3510,14 +3516,14 @@
      * @param {*} value The value to be validated.
      * @return {Boolean} Flag indicating if value is valid or not.
      */
-    jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.prototype.validateAttrValue_ = function(name, value) {
+    jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.prototype.validateAttrValue_ = function(name, value) {
       var info = this.attrsInfo_[name];
 
-      return info.state === jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute.States.INITIALIZING_DEFAULT ||
+      return info.state === jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute.States.INITIALIZING_DEFAULT ||
         this.callValidator_(name, value);
     };
 
-    var jspm_packages$github$mairatma$core$es6$attribute$Attribute$$default = jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute;
+    var jspm_packages$github$alloyui$core$master$attribute$Attribute$$default = jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute;
     'use strict';
 
     /**
@@ -3533,8 +3539,9 @@
      * @param {Object} opt_blacklist Optional blacklist of events that should not be
      *   proxied.
      * @constructor
+     * @extends {Disposable}
      */
-    var jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy = function(originEmitter, targetEmitter, opt_blacklist) {
+    var jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy = function(originEmitter, targetEmitter, opt_blacklist) {
       this.originEmitter_ = originEmitter;
       this.targetEmitter_ = targetEmitter;
       this.blacklist_ = opt_blacklist || {};
@@ -3542,7 +3549,7 @@
 
       this.startProxy_();
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy, jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy, jspm_packages$github$alloyui$core$master$disposable$Disposable$$default);
 
     /**
      * Map of events that should not be proxied.
@@ -3550,7 +3557,7 @@
      * @default null
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.blacklist_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.blacklist_ = null;
 
     /**
      * The origin emitter. This emitter's events will be proxied through the
@@ -3559,7 +3566,7 @@
      * @default null
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.originEmitter_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.originEmitter_ = null;
 
     /**
      * Holds a map of events from the origin emitter that are already being proxied.
@@ -3567,7 +3574,7 @@
      * @default null
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.proxiedEvents_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.proxiedEvents_ = null;
 
     /**
      * The target emitter. This emitter will emit all events that come from
@@ -3576,13 +3583,13 @@
      * @default null
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.targetEmitter_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.targetEmitter_ = null;
 
     /**
      * @inheritDoc
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.disposeInternal = function() {
-      var removeFnName = jspm_packages$github$mairatma$core$es6$core$$default.isElement(this.originEmitter_) ? 'removeEventListener' : 'removeListener';
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.disposeInternal = function() {
+      var removeFnName = jspm_packages$github$alloyui$core$master$core$$default.isElement(this.originEmitter_) ? 'removeEventListener' : 'removeListener';
       for (var event in this.proxiedEvents_) {
         this.originEmitter_[removeFnName](event, this.proxiedEvents_[event]);
       }
@@ -3596,7 +3603,7 @@
      * Proxies the given event from the origin to the target emitter.
      * @param {string} event
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.proxyEvent_ = function(event) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.proxyEvent_ = function(event) {
       if (!this.shouldProxyEvent_(event)) {
         return;
       }
@@ -3607,7 +3614,7 @@
         self.targetEmitter_.emit.apply(self.targetEmitter_, args);
       };
 
-      var addFnName = jspm_packages$github$mairatma$core$es6$core$$default.isElement(this.originEmitter_) ? 'addEventListener' : 'on';
+      var addFnName = jspm_packages$github$alloyui$core$master$core$$default.isElement(this.originEmitter_) ? 'addEventListener' : 'on';
       this.originEmitter_[addFnName](event, this.proxiedEvents_[event]);
     };
 
@@ -3617,31 +3624,32 @@
      * @return {boolean}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.shouldProxyEvent_ = function(event) {
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.shouldProxyEvent_ = function(event) {
       return !this.proxiedEvents_[event] && !this.blacklist_[event] &&
-        (!jspm_packages$github$mairatma$core$es6$core$$default.isElement(this.originEmitter_) || jspm_packages$github$mairatma$core$es6$dom$dom$$default.supportsEvent(this.originEmitter_, event));
+        (!jspm_packages$github$alloyui$core$master$core$$default.isElement(this.originEmitter_) || jspm_packages$github$alloyui$core$master$dom$dom$$default.supportsEvent(this.originEmitter_, event));
     };
 
     /**
      * Starts proxying all events from the origin to the target emitter.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy.prototype.startProxy_ = function() {
-      this.targetEmitter_.on('newListener', jspm_packages$github$mairatma$core$es6$core$$default.bind(this.proxyEvent_, this));
+    jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy.prototype.startProxy_ = function() {
+      this.targetEmitter_.on('newListener', jspm_packages$github$alloyui$core$master$core$$default.bind(this.proxyEvent_, this));
     };
 
-    var jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$default = jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy;
+    var jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$default = jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy;
     'use strict';
 
     /**
      * EventHandler utility. It's useful for easily removing a group of
      * listeners from different EventEmitter instances.
      * @constructor
+     * @extends {Disposable}
      */
-    var jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler = function() {
+    var jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler = function() {
       this.eventHandles_ = [];
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler, jspm_packages$github$mairatma$core$es6$disposable$Disposable$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler, jspm_packages$github$alloyui$core$master$disposable$Disposable$$default);
 
     /**
      * An array that holds the added event handles, so the listeners can be
@@ -3649,14 +3657,14 @@
      * @type {Array.<EventHandle>}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler.prototype.eventHandles_ = null;
+    jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler.prototype.eventHandles_ = null;
 
     /**
      * Adds event handles to be removed later through the `removeAllListeners`
      * method.
      * @param {...(!EventHandle)} var_args
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler.prototype.add = function() {
+    jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler.prototype.add = function() {
       for (var i = 0; i < arguments.length; i++) {
         this.eventHandles_.push(arguments[i]);
       }
@@ -3666,14 +3674,14 @@
      * Disposes of this instance's object references.
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler.prototype.disposeInternal = function() {
       this.eventHandles_ = null;
     };
 
     /**
      * Removes all listeners that have been added through the `add` method.
      */
-    jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler.prototype.removeAllListeners = function() {
+    jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler.prototype.removeAllListeners = function() {
       for (var i = 0; i < this.eventHandles_.length; i++) {
         this.eventHandles_[i].removeListener();
       }
@@ -3681,7 +3689,7 @@
       this.eventHandles_ = [];
     };
 
-    var jspm_packages$github$mairatma$core$es6$events$EventHandler$$default = jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler;
+    var jspm_packages$github$alloyui$core$master$events$EventHandler$$default = jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler;
     'use strict';
 
     /**
@@ -3727,28 +3735,29 @@
      * @param {!Object} opt_config An object with the initial values for this component's
      *   attributes.
      * @constructor
+     * @extends {Attribute}
      */
-    var jspm_packages$github$mairatma$core$es6$component$Component$$Component = function(opt_config) {
-      jspm_packages$github$mairatma$core$es6$component$Component$$Component.base(this, 'constructor', opt_config);
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'ATTRS_SYNC', this.mergeAttrsSync_);
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'ELEMENT_CLASSES', this.mergeElementClasses_);
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'ELEMENT_TAG_NAME', jspm_packages$github$mairatma$core$es6$array$array$$default.firstDefinedValue);
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'SURFACE_TAG_NAME', jspm_packages$github$mairatma$core$es6$array$array$$default.firstDefinedValue);
+    var jspm_packages$github$alloyui$core$master$component$Component$$Component = function(opt_config) {
+      jspm_packages$github$alloyui$core$master$component$Component$$Component.base(this, 'constructor', opt_config);
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'ATTRS_SYNC', this.mergeAttrsSync_);
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'ELEMENT_CLASSES', this.mergeElementClasses_);
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'ELEMENT_TAG_NAME', jspm_packages$github$alloyui$core$master$array$array$$default.firstDefinedValue);
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'SURFACE_TAG_NAME', jspm_packages$github$alloyui$core$master$array$array$$default.firstDefinedValue);
 
-      this.elementEventProxy_ = new jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$default(this.element, this);
-      this.delegateEventHandler_ = new jspm_packages$github$mairatma$core$es6$events$EventHandler$$default();
+      this.elementEventProxy_ = new jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$default(this.element, this);
+      this.delegateEventHandler_ = new jspm_packages$github$alloyui$core$master$events$EventHandler$$default();
 
       this.addSurfacesFromStaticHint_();
       this.created_();
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$component$Component$$Component, jspm_packages$github$mairatma$core$es6$attribute$Attribute$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$component$Component$$Component, jspm_packages$github$alloyui$core$master$attribute$Attribute$$default);
 
     /**
      * Component attributes definition.
      * @type {Object}
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.ATTRS = {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.ATTRS = {
       /**
        * Component element bounding box.
        * @type {Element}
@@ -3792,7 +3801,7 @@
      * @type {Array}
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.ATTRS_SYNC = ['elementClasses'];
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.ATTRS_SYNC = ['elementClasses'];
 
     /**
      * CSS classes to be applied to the element.
@@ -3800,7 +3809,7 @@
      * @protected
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.ELEMENT_CLASSES = ['component'];
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.ELEMENT_CLASSES = ['component'];
 
     /**
      * Element tag name is a string that specifies the type of element to be
@@ -3811,7 +3820,7 @@
      * @protected
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.ELEMENT_TAG_NAME = 'div';
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.ELEMENT_TAG_NAME = 'div';
 
     /**
      * Surface tag name is a string that specifies the type of element to be
@@ -3822,13 +3831,13 @@
      * @protected
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.SURFACE_TAG_NAME = 'div';
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.SURFACE_TAG_NAME = 'div';
 
     /**
      * Cache states for the component.
      * @enum {string}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache = {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache = {
       /**
        * Cache is not allowed for this state.
        */
@@ -3844,7 +3853,7 @@
      * Errors thrown by the component.
      * @enum {string}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.Error = {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.Error = {
       /**
        * Error when the component is already rendered and another render attempt
        * is made.
@@ -3856,20 +3865,20 @@
      * Holds events that were listened through the `delegate` Component function.
      * @type {EventHandler}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.delegateEventHandler_ = null;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.delegateEventHandler_ = null;
 
     /**
      * Instance of `EventEmitterProxy` which proxies events from the component's
      * element to the component itself.
      * @type {EventEmitterProxy}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.elementEventProxy_ = null;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.elementEventProxy_ = null;
 
     /**
      * Whether the element is in document.
      * @type {Boolean}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.inDocument = false;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.inDocument = false;
 
     /**
      * Maps that index the surfaces instances by the surface id.
@@ -3877,7 +3886,7 @@
      * @default null
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.surfaces_ = null;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.surfaces_ = null;
 
     /**
      * Registers a surface to the component. Surface elements are not
@@ -3886,9 +3895,9 @@
      * @param {Object=} opt_config Optional surface configuration.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.addSurface = function(surfaceId, opt_config) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.addSurface = function(surfaceId, opt_config) {
       this.surfaces_[surfaceId] = opt_config || {
-        cacheState: jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache.NOT_INITIALIZED
+        cacheState: jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache.NOT_INITIALIZED
       };
       this.cacheSurfaceRenderAttrs_(surfaceId);
       return this;
@@ -3901,7 +3910,7 @@
      *     of all the surfaces to be added to their configuration objects.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.addSurfaces = function(configs) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.addSurfaces = function(configs) {
       for (var surfaceId in configs) {
         this.addSurface(surfaceId, configs[surfaceId]);
       }
@@ -3912,8 +3921,8 @@
      * Adds surfaces from super classes static hint.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.addSurfacesFromStaticHint_ = function() {
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'SURFACES', this.mergeSurfaces_);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.addSurfacesFromStaticHint_ = function() {
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'SURFACES', this.mergeSurfaces_);
       this.surfaces_ = {};
       this.surfacesRenderAttrs_ = {};
       this.addSurfaces(this.constructor.SURFACES_MERGED);
@@ -3933,7 +3942,7 @@
      * @protected
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.attach = function(opt_parentElement, opt_siblingElement) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.attach = function(opt_parentElement, opt_siblingElement) {
       this.renderElement_(opt_parentElement, opt_siblingElement);
       this.inDocument = true;
       this.attached();
@@ -3947,7 +3956,7 @@
      * times, therefore the undo behavior for any action performed in this phase
      * must be implemented on the detach phase.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.attached = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.attached = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Caches surface render attributes into a O(k) flat map representation.
@@ -3956,7 +3965,7 @@
      * @param {string} surfaceId The surface id to be cached into the flat map.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.cacheSurfaceRenderAttrs_ = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.cacheSurfaceRenderAttrs_ = function(surfaceId) {
       var attrs = this.getSurface(surfaceId).renderAttrs;
       for (var i in attrs) {
         this.surfacesRenderAttrs_[attrs[i]] = this.surfacesRenderAttrs_[attrs[i]] || {};
@@ -3968,9 +3977,9 @@
      * Clears the surfaces content cache.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.clearSurfacesCache_ = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.clearSurfacesCache_ = function() {
       for (var surfaceId in this.surfaces_) {
-        this.getSurface(surfaceId).cacheState = jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache.NOT_INITIALIZED;
+        this.getSurface(surfaceId).cacheState = jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache.NOT_INITIALIZED;
       }
     };
 
@@ -3981,11 +3990,11 @@
      * @return {Object} The computed cache state.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.computeSurfaceCacheState_ = function(value) {
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isString(value)) {
-        return jspm_packages$github$mairatma$core$es6$string$string$$default.hashCode(value);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.computeSurfaceCacheState_ = function(value) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isString(value)) {
+        return jspm_packages$github$alloyui$core$master$string$string$$default.hashCode(value);
       }
-      return jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache.NOT_CACHEABLE;
+      return jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache.NOT_CACHEABLE;
     };
 
     /**
@@ -3995,10 +4004,10 @@
      * formatting differences that does not affect the content structure.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.computeSurfacesCacheStateFromDom_ = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.computeSurfacesCacheStateFromDom_ = function() {
       for (var surfaceId in this.surfaces_) {
         var surface = this.getSurface(surfaceId);
-        surface.cacheState = this.computeSurfaceCacheState_(jspm_packages$github$mairatma$core$es6$html$html$$default.compress(this.getSurfaceElement(surfaceId).innerHTML));
+        surface.cacheState = this.computeSurfaceCacheState_(jspm_packages$github$alloyui$core$master$html$html$$default.compress(this.getSurfaceElement(surfaceId).innerHTML));
       }
     };
 
@@ -4009,7 +4018,7 @@
      * @return {Element} The surface element.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.createSurfaceElement_ = function(surfaceElementId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.createSurfaceElement_ = function(surfaceElementId) {
       var el = document.createElement(this.constructor.SURFACE_TAG_NAME_MERGED);
       el.id = surfaceElementId;
       return el;
@@ -4024,8 +4033,8 @@
      *   triggered. It will receive the normalized event object.
      * @return {!DomEventHandle} Can be used to remove the listener.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.delegate = function(eventName, selector, callback) {
-      var handle = jspm_packages$github$mairatma$core$es6$dom$dom$$default.delegate(this.element, eventName, selector, callback);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.delegate = function(eventName, selector, callback) {
+      var handle = jspm_packages$github$alloyui$core$master$dom$dom$$default.delegate(this.element, eventName, selector, callback);
       this.delegateEventHandler_.add(handle);
       return handle;
     };
@@ -4037,7 +4046,7 @@
      * can be detached multiple times.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.detach = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.detach = function() {
       this.element.parentNode.removeChild(this.element);
       this.inDocument = false;
       this.detached();
@@ -4051,7 +4060,7 @@
      * times, therefore the undo behavior for any action performed in this phase
      * must be implemented on the attach phase.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.detached = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.detached = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Lifecycle. Creation phase of the component happens once after the
@@ -4062,13 +4071,13 @@
      * events in this phase, in contrast to DOM events that must be bind on
      * attach phase.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.created = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.created = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Internal implementation for the creation phase of the component.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.created_ = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.created_ = function() {
       this.on('attrsChanged', this.handleAttributesChanges_);
       this.created();
     };
@@ -4088,9 +4097,9 @@
      *   attach - Attach Lifecycle is called.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.decorate = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.decorate = function() {
       if (this.inDocument) {
-        throw new Error(jspm_packages$github$mairatma$core$es6$component$Component$$Component.Error.ALREADY_RENDERED);
+        throw new Error(jspm_packages$github$alloyui$core$master$component$Component$$Component.Error.ALREADY_RENDERED);
       }
 
       this.decorateInternal();
@@ -4107,12 +4116,12 @@
      * Lifecycle. Internal implementation for decoration. Any extra operation
      * necessary to prepare the component DOM must be implemented in this phase.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.decorateInternal = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.decorateInternal = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * @inheritDoc
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.disposeInternal = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.disposeInternal = function() {
       this.detach();
 
       this.elementEventProxy_.dispose();
@@ -4123,7 +4132,7 @@
 
       this.surfaces_ = null;
       this.surfacesRenderAttrs_ = null;
-      jspm_packages$github$mairatma$core$es6$component$Component$$Component.base(this, 'disposeInternal');
+      jspm_packages$github$alloyui$core$master$component$Component$$Component.base(this, 'disposeInternal');
     };
 
     /**
@@ -4133,7 +4142,7 @@
      *     name as key and an object with newVal and prevVal as value.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.fireAttrsChanges_ = function(changes) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.fireAttrsChanges_ = function(changes) {
       for (var attr in changes) {
         if (attr in this.constructor.ATTRS_SYNC_MERGED) {
           this.fireAttrChange_(attr, changes[attr]);
@@ -4147,9 +4156,9 @@
      *     prevVal keys.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.fireAttrChange_ = function(attr, opt_change) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.fireAttrChange_ = function(attr, opt_change) {
       var fn = this['sync' + attr.charAt(0).toUpperCase() + attr.slice(1)];
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(fn)) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(fn)) {
         if (!opt_change) {
           opt_change = {
             newVal: this[attr],
@@ -4167,12 +4176,12 @@
      * @return {Object.<string, boolean>} Object containing modified surface ids
      *     as key and true as value.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getModifiedSurfacesFromChanges_ = function(changes) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getModifiedSurfacesFromChanges_ = function(changes) {
       var surfaces = [];
       for (var attr in changes) {
         surfaces.push(this.surfacesRenderAttrs_[attr]);
       }
-      return jspm_packages$github$mairatma$core$es6$object$object$$default.mixin.apply(null, surfaces);
+      return jspm_packages$github$alloyui$core$master$object$object$$default.mixin.apply(null, surfaces);
     };
 
     /**
@@ -4181,7 +4190,7 @@
      * @param {string} surfaceId The surface id.
      * @return {?Object} The surface configuration object.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getSurface = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getSurface = function(surfaceId) {
       return this.surfaces_[surfaceId] || null;
     };
 
@@ -4193,7 +4202,7 @@
      * @return {Object|string} The content to be rendered.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getSurfaceContent_ = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getSurfaceContent_ = function(surfaceId) {
       return this.getSurfaceContent(surfaceId);
     };
 
@@ -4202,7 +4211,7 @@
      * @param {string} surfaceId The surface id.
      * @return {Object|string} The content to be rendered.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getSurfaceContent = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getSurfaceContent = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Queries from the document or creates an element for the surface. Surface
@@ -4213,7 +4222,7 @@
      * @param {string} surfaceId The surface id.
      * @return {Element} The surface element or null if surface not registered.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getSurfaceElement = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getSurfaceElement = function(surfaceId) {
       var surface = this.getSurface(surfaceId);
       if (!surface) {
         return null;
@@ -4231,7 +4240,7 @@
      * A map of surface ids to the respective surface object.
      * @return {!Object}
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.getSurfaces = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.getSurfaces = function() {
       return this.surfaces_;
     };
 
@@ -4241,7 +4250,7 @@
      * @param {Event} event
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.handleAttributesChanges_ = function(event) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.handleAttributesChanges_ = function(event) {
       if (this.inDocument) {
         this.renderSurfacesContent_(this.getModifiedSurfacesFromChanges_(event.changes));
       }
@@ -4253,8 +4262,8 @@
      * @return {string} Unique id.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.makeId_ = function() {
-      return 'lfr_c_' + jspm_packages$github$mairatma$core$es6$core$$default.getUid(this);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.makeId_ = function() {
+      return 'lfr_c_' + jspm_packages$github$alloyui$core$master$core$$default.getUid(this);
     };
 
     /**
@@ -4263,7 +4272,7 @@
      * @return {string}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.makeSurfaceId_ = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.makeSurfaceId_ = function(surfaceId) {
       return this.id + '-' + surfaceId;
     };
 
@@ -4274,9 +4283,9 @@
      * @return {!Object} The merged value.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.mergeAttrsSync_ = function(values) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.mergeAttrsSync_ = function(values) {
       var merged = {};
-      values = jspm_packages$github$mairatma$core$es6$array$array$$default.flatten(values);
+      values = jspm_packages$github$alloyui$core$master$array$array$$default.flatten(values);
       for (var i = 0; i < values.length; i++) {
         if (values[i]) {
           merged[values[i]] = undefined;
@@ -4291,8 +4300,8 @@
      * @return {!Object} The merged value.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.mergeElementClasses_ = function(values) {
-      return jspm_packages$github$mairatma$core$es6$array$array$$default.flatten(values.filter(function(val) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.mergeElementClasses_ = function(values) {
+      return jspm_packages$github$alloyui$core$master$array$array$$default.flatten(values.filter(function(val) {
         return val;
       }));
     };
@@ -4303,8 +4312,8 @@
      * @return {!Object} The merged value.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.mergeSurfaces_ = function(values) {
-      return jspm_packages$github$mairatma$core$es6$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.mergeSurfaces_ = function(values) {
+      return jspm_packages$github$alloyui$core$master$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
     };
 
     /**
@@ -4312,7 +4321,7 @@
      * @param {string} surfaceId The surface id.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.removeSurface = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.removeSurface = function(surfaceId) {
       var el = this.getSurfaceElement(surfaceId);
       if (el && el.parentNode) {
         el.parentNode.removeChild(el);
@@ -4340,9 +4349,9 @@
      *     `component.render(null, existingElement)`.
      * @chainable
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.render = function(opt_parentElement, opt_siblingElement) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.render = function(opt_parentElement, opt_siblingElement) {
       if (this.inDocument) {
-        throw new Error(jspm_packages$github$mairatma$core$es6$component$Component$$Component.Error.ALREADY_RENDERED);
+        throw new Error(jspm_packages$github$alloyui$core$master$component$Component$$Component.Error.ALREADY_RENDERED);
       }
 
       this.renderInternal();
@@ -4365,11 +4374,11 @@
      *     `component.render(null, existingElement)`.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.renderElement_ = function(opt_parentElement, opt_siblingElement) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.renderElement_ = function(opt_parentElement, opt_siblingElement) {
       this.element.id = this.id;
       if (opt_siblingElement || !this.element.parentNode) {
-        var parent = jspm_packages$github$mairatma$core$es6$dom$dom$$default.toElement(opt_parentElement) || document.body;
-        parent.insertBefore(this.element, jspm_packages$github$mairatma$core$es6$dom$dom$$default.toElement(opt_siblingElement));
+        var parent = jspm_packages$github$alloyui$core$master$dom$dom$$default.toElement(opt_parentElement) || document.body;
+        parent.insertBefore(this.element, jspm_packages$github$alloyui$core$master$dom$dom$$default.toElement(opt_siblingElement));
       }
     };
 
@@ -4377,7 +4386,7 @@
      * Lifecycle. Internal implementation for rendering. Any extra operation
      * necessary to prepare the component DOM must be implemented in this phase.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.renderInternal = jspm_packages$github$mairatma$core$es6$core$$default.nullFunction;
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.renderInternal = jspm_packages$github$alloyui$core$master$core$$default.nullFunction;
 
     /**
      * Render content into a surface. If the specified content is the same of
@@ -4389,18 +4398,18 @@
      * @param {string} surfaceId The surface id.
      * @param {Object|string} content The content to be rendered.
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.renderSurfaceContent = function(surfaceId, content) {
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isDefAndNotNull(content)) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.renderSurfaceContent = function(surfaceId, content) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isDefAndNotNull(content)) {
         var surface = this.getSurface(surfaceId);
         var cacheState = this.computeSurfaceCacheState_(content);
 
-        if (cacheState === jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache.NOT_INITIALIZED ||
-          cacheState === jspm_packages$github$mairatma$core$es6$component$Component$$Component.Cache.NOT_CACHEABLE ||
+        if (cacheState === jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache.NOT_INITIALIZED ||
+          cacheState === jspm_packages$github$alloyui$core$master$component$Component$$Component.Cache.NOT_CACHEABLE ||
           cacheState !== surface.cacheState) {
 
           var el = this.getSurfaceElement(surfaceId);
-          jspm_packages$github$mairatma$core$es6$dom$dom$$default.removeChildren(el);
-          jspm_packages$github$mairatma$core$es6$dom$dom$$default.append(el, content);
+          jspm_packages$github$alloyui$core$master$dom$dom$$default.removeChildren(el);
+          jspm_packages$github$alloyui$core$master$dom$dom$$default.append(el, content);
         }
         surface.cacheState = cacheState;
       }
@@ -4412,7 +4421,7 @@
      *     the surface id and value the optional surface configuration.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.renderSurfacesContent_ = function(surfaces) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.renderSurfacesContent_ = function(surfaces) {
       for (var surfaceId in surfaces) {
         this.renderSurfaceContent(surfaceId, this.getSurfaceContent_(surfaceId));
       }
@@ -4424,8 +4433,8 @@
      * @return {Element}
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.setterElementFn_ = function(val) {
-      return jspm_packages$github$mairatma$core$es6$dom$dom$$default.toElement(val);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.setterElementFn_ = function(val) {
+      return jspm_packages$github$alloyui$core$master$dom$dom$$default.toElement(val);
     };
 
     /**
@@ -4433,14 +4442,14 @@
      * @param {Array.<string>} newVal
      * @param {Array.<string>} prevVal
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.syncElementClasses = function(newVal, prevVal) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.syncElementClasses = function(newVal, prevVal) {
       var classesToAdd = this.constructor.ELEMENT_CLASSES_MERGED;
       if (newVal) {
         classesToAdd = classesToAdd.concat(newVal);
       }
 
-      jspm_packages$github$mairatma$core$es6$dom$dom$$default.removeClasses(this.element, prevVal || []);
-      jspm_packages$github$mairatma$core$es6$dom$dom$$default.addClasses(this.element, classesToAdd);
+      jspm_packages$github$alloyui$core$master$dom$dom$$default.removeClasses(this.element, prevVal || []);
+      jspm_packages$github$alloyui$core$master$dom$dom$$default.addClasses(this.element, classesToAdd);
     };
 
     /**
@@ -4449,8 +4458,8 @@
      * @return {Boolean} True if val is a valid element.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.validatorElementFn_ = function(val) {
-      return jspm_packages$github$mairatma$core$es6$core$$default.isElement(val) || jspm_packages$github$mairatma$core$es6$core$$default.isString(val);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.validatorElementFn_ = function(val) {
+      return jspm_packages$github$alloyui$core$master$core$$default.isElement(val) || jspm_packages$github$alloyui$core$master$core$$default.isString(val);
     };
 
     /**
@@ -4459,7 +4468,7 @@
      * @return {Boolean} True if val is a valid element classes.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.validatorElementClassesFn_ = function(val) {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.validatorElementClassesFn_ = function(val) {
       return Array.isArray(val);
     };
 
@@ -4469,8 +4478,8 @@
      * @return {Boolean} True if val is a valid id.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.validatorIdFn_ = function(val) {
-      return jspm_packages$github$mairatma$core$es6$core$$default.isString(val);
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.validatorIdFn_ = function(val) {
+      return jspm_packages$github$alloyui$core$master$core$$default.isString(val);
     };
 
     /**
@@ -4478,7 +4487,7 @@
      * @return {Element} The element.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.valueElementFn_ = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.valueElementFn_ = function() {
       return document.createElement(this.constructor.ELEMENT_TAG_NAME_MERGED);
     };
 
@@ -4487,11 +4496,11 @@
      * @return {string} The id.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$Component$$Component.prototype.valueIdFn_ = function() {
+    jspm_packages$github$alloyui$core$master$component$Component$$Component.prototype.valueIdFn_ = function() {
       return this.element.id || this.makeId_();
     };
 
-    var jspm_packages$github$mairatma$core$es6$component$Component$$default = jspm_packages$github$mairatma$core$es6$component$Component$$Component;
+    var jspm_packages$github$alloyui$core$master$component$Component$$default = jspm_packages$github$alloyui$core$master$component$Component$$Component;
     'use strict';
 
     /**
@@ -4500,14 +4509,14 @@
      * templates defined with their names, skipping the call to `getSurfaceContent`.
      * @param {Object} opt_config An object with the initial values for this component's
      *   attributes.
-     * @extends {Component}
      * @constructor
+     * @extends {Component}
      */
-    var jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent = function(opt_config) {
-      jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.base(this, 'constructor', opt_config);
-      jspm_packages$github$mairatma$core$es6$core$$default.mergeSuperClassesProperty(this.constructor, 'TEMPLATES', this.mergeTemplates_);
+    var jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent = function(opt_config) {
+      jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.base(this, 'constructor', opt_config);
+      jspm_packages$github$alloyui$core$master$core$$default.mergeSuperClassesProperty(this.constructor, 'TEMPLATES', this.mergeTemplates_);
     };
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent, jspm_packages$github$mairatma$core$es6$component$Component$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent, jspm_packages$github$alloyui$core$master$component$Component$$default);
 
     /**
      * The soy templates for this component. Templates that have the same
@@ -4517,7 +4526,7 @@
      * @protected
      * @static
      */
-    jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.TEMPLATES = {};
+    jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.TEMPLATES = {};
 
     /**
      * Overrides the default behavior so that this can automatically render
@@ -4527,12 +4536,12 @@
      * @protected
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.prototype.getSurfaceContent_ = function(surfaceId) {
+    jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.prototype.getSurfaceContent_ = function(surfaceId) {
       var surfaceTemplate = this.constructor.TEMPLATES_MERGED[surfaceId];
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(surfaceTemplate)) {
+      if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(surfaceTemplate)) {
         return surfaceTemplate(this).content;
       } else {
-        return jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.base(this, 'getSurfaceContent_', surfaceId);
+        return jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.base(this, 'getSurfaceContent_', surfaceId);
       }
     };
 
@@ -4542,8 +4551,8 @@
      * @return {!Object} The merged value.
      * @protected
      */
-    jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.prototype.mergeTemplates_ = function(values) {
-      return jspm_packages$github$mairatma$core$es6$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
+    jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.prototype.mergeTemplates_ = function(values) {
+      return jspm_packages$github$alloyui$core$master$object$object$$default.mixin.apply(null, [{}].concat(values.reverse()));
     };
 
     /**
@@ -4551,14 +4560,14 @@
      * template if it's defined.
      * @override
      */
-    jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent.prototype.renderInternal = function() {
+    jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent.prototype.renderInternal = function() {
       var elementTemplate = this.constructor.TEMPLATES_MERGED.element;
-      if (jspm_packages$github$mairatma$core$es6$core$$default.isFunction(elementTemplate)) {
-        jspm_packages$github$mairatma$core$es6$dom$dom$$default.append(this.element, elementTemplate(this).content);
+      if (jspm_packages$github$alloyui$core$master$core$$default.isFunction(elementTemplate)) {
+        jspm_packages$github$alloyui$core$master$dom$dom$$default.append(this.element, elementTemplate(this).content);
       }
     };
 
-    var jspm_packages$github$mairatma$core$es6$component$SoyComponent$$default = jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent;
+    var jspm_packages$github$alloyui$core$master$component$SoyComponent$$default = jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent;
 
     if (typeof jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates == 'undefined') { var jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates = {}; }
 
@@ -4590,11 +4599,12 @@
       jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates.content.soyTemplateName = 'templates.content';
     }
     var jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$default = jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates;
+    'use strict';
 
     function jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip(opt_config) {
       jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.base(this, 'constructor', opt_config);
     }
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip, jspm_packages$github$mairatma$core$es6$component$SoyComponent$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip, jspm_packages$github$alloyui$core$master$component$SoyComponent$$default);
 
     jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.ATTRS = {
       content: {
@@ -4621,12 +4631,10 @@
     jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.TEMPLATES = jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$default;
 
     jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.prototype.attached = function() {
-      var self = this;
-
-      this.eventHandler_ = new jspm_packages$github$mairatma$core$es6$events$EventHandler$$default();
+      this.eventHandler_ = new jspm_packages$github$alloyui$core$master$events$EventHandler$$default();
       this.eventHandler_.add(
-        jspm_packages$github$mairatma$core$es6$dom$dom$$default.on(this.trigger, 'mouseover', jspm_packages$github$mairatma$core$es6$core$$default.bind(this.onTriggerMouseOver_, this)),
-        jspm_packages$github$mairatma$core$es6$dom$dom$$default.on(this.trigger, 'mouseout', jspm_packages$github$mairatma$core$es6$core$$default.bind(this.onTriggerMouseOut_, this))
+        jspm_packages$github$alloyui$core$master$dom$dom$$default.on(this.trigger, 'mouseover', jspm_packages$github$alloyui$core$master$core$$default.bind(this.onTriggerMouseOver_, this)),
+        jspm_packages$github$alloyui$core$master$dom$dom$$default.on(this.trigger, 'mouseout', jspm_packages$github$alloyui$core$master$core$$default.bind(this.onTriggerMouseOut_, this))
       );
     };
 
@@ -4647,7 +4655,7 @@
     };
 
     jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.prototype.setterTriggerFn_ = function(val) {
-      return jspm_packages$github$mairatma$core$es6$dom$dom$$default.toElement(val);
+      return jspm_packages$github$alloyui$core$master$dom$dom$$default.toElement(val);
     };
 
     jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip.prototype.syncVisible = function() {
@@ -4655,13 +4663,14 @@
     };
 
     var jspm_packages$github$alloyui$tooltip$master$tooltip$$default = jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip;
+    'use strict';
 
-    function dist$modal$$Modal(opt_config) {
-      dist$modal$$Modal.base(this, 'constructor', opt_config);
+    function src$modal$$Modal(opt_config) {
+      src$modal$$Modal.base(this, 'constructor', opt_config);
     }
-    jspm_packages$github$mairatma$core$es6$core$$default.inherits(dist$modal$$Modal, jspm_packages$github$mairatma$core$es6$component$SoyComponent$$default);
+    jspm_packages$github$alloyui$core$master$core$$default.inherits(src$modal$$Modal, jspm_packages$github$alloyui$core$master$component$SoyComponent$$default);
 
-    dist$modal$$Modal.ATTRS = {
+    src$modal$$Modal.ATTRS = {
       bodyContent: {
         value: ''
       },
@@ -4681,9 +4690,9 @@
       }
     };
 
-    dist$modal$$Modal.ATTRS_SYNC = ['visible'];
+    src$modal$$Modal.ATTRS_SYNC = ['visible'];
 
-    dist$modal$$Modal.SURFACES = {
+    src$modal$$Modal.SURFACES = {
       body: {
         renderAttrs: ['bodyContent']
       },
@@ -4695,13 +4704,15 @@
       }
     };
 
-    dist$modal$$Modal.TEMPLATES = dist$modal$soy$$default;
+    src$modal$$Modal.TEMPLATES = src$modal$soy$$default;
 
-    dist$modal$$Modal.prototype.attached = function() {
+    src$modal$$Modal.prototype.attached = function() {
       var instance = this;
 
       this.delegate('click', '.modal-button', function(event) {
-        instance.emit('buttonClicked', {button: event.delegateTarget});
+        instance.emit('buttonClicked', {
+          button: event.delegateTarget
+        });
       });
 
       this.tooltip_ = new jspm_packages$github$alloyui$tooltip$master$tooltip$$default({
@@ -4710,33 +4721,33 @@
       }).render();
     };
 
-    dist$modal$$Modal.prototype.syncVisible = function() {
+    src$modal$$Modal.prototype.syncVisible = function() {
       this.element.style.display = this.visible ? 'block' : 'none';
     };
 
-    var dist$modal$$default = dist$modal$$Modal;
-    this.alloyui = this.alloyui || {};
-    this.alloyui.Modal = dist$modal$$Modal;
-    this.alloyui.templates = dist$modal$soy$$templates;
-    this.alloyui.core = jspm_packages$github$mairatma$core$es6$core$$core;
-    this.alloyui.SoyComponent = jspm_packages$github$mairatma$core$es6$component$SoyComponent$$SoyComponent;
-    this.alloyui.Tooltip = jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip;
-    this.alloyui.dom = jspm_packages$github$mairatma$core$es6$dom$dom$$dom;
-    this.alloyui.object = jspm_packages$github$mairatma$core$es6$object$object$$object;
-    this.alloyui.Component = jspm_packages$github$mairatma$core$es6$component$Component$$Component;
-    this.alloyui.EventHandler = jspm_packages$github$mairatma$core$es6$events$EventHandler$$EventHandler;
-    this.alloyui.templates = jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates;
-    this.alloyui.DomEventHandle = jspm_packages$github$mairatma$core$es6$events$DomEventHandle$$DomEventHandle;
-    this.alloyui.array = jspm_packages$github$mairatma$core$es6$array$array$$array;
-    this.alloyui.html = jspm_packages$github$mairatma$core$es6$html$html$$html;
-    this.alloyui.string = jspm_packages$github$mairatma$core$es6$string$string$$string;
-    this.alloyui.Attribute = jspm_packages$github$mairatma$core$es6$attribute$Attribute$$Attribute;
-    this.alloyui.EventEmitterProxy = jspm_packages$github$mairatma$core$es6$events$EventEmitterProxy$$EventEmitterProxy;
-    this.alloyui.Disposable = jspm_packages$github$mairatma$core$es6$disposable$Disposable$$Disposable;
-    this.alloyui.EventHandle = jspm_packages$github$mairatma$core$es6$events$EventHandle$$EventHandle;
-    this.alloyui.EventEmitter = jspm_packages$github$mairatma$core$es6$events$EventEmitter$$EventEmitter;
-    this.alloyui.CancellablePromise = jspm_packages$github$mairatma$core$es6$promise$Promise$$CancellablePromise;
-    this.alloyui.async = jspm_packages$github$mairatma$core$es6$promise$Promise$$async;
-    this.alloyui.WildcardTrie = jspm_packages$github$mairatma$core$es6$structs$WildcardTrie$$WildcardTrie;
-    this.alloyui.Trie = jspm_packages$github$mairatma$core$es6$structs$Trie$$Trie;
+    var src$modal$$default = src$modal$$Modal;
+    this.aui = this.aui || {};
+    this.aui.Modal = src$modal$$Modal;
+    this.aui.templates = src$modal$soy$$templates;
+    this.aui.core = jspm_packages$github$alloyui$core$master$core$$core;
+    this.aui.SoyComponent = jspm_packages$github$alloyui$core$master$component$SoyComponent$$SoyComponent;
+    this.aui.Tooltip = jspm_packages$github$alloyui$tooltip$master$tooltip$$Tooltip;
+    this.aui.dom = jspm_packages$github$alloyui$core$master$dom$dom$$dom;
+    this.aui.object = jspm_packages$github$alloyui$core$master$object$object$$object;
+    this.aui.Component = jspm_packages$github$alloyui$core$master$component$Component$$Component;
+    this.aui.EventHandler = jspm_packages$github$alloyui$core$master$events$EventHandler$$EventHandler;
+    this.aui.templates = jspm_packages$github$alloyui$tooltip$master$tooltip$soy$$templates;
+    this.aui.DomEventHandle = jspm_packages$github$alloyui$core$master$events$DomEventHandle$$DomEventHandle;
+    this.aui.array = jspm_packages$github$alloyui$core$master$array$array$$array;
+    this.aui.html = jspm_packages$github$alloyui$core$master$html$html$$html;
+    this.aui.string = jspm_packages$github$alloyui$core$master$string$string$$string;
+    this.aui.Attribute = jspm_packages$github$alloyui$core$master$attribute$Attribute$$Attribute;
+    this.aui.EventEmitterProxy = jspm_packages$github$alloyui$core$master$events$EventEmitterProxy$$EventEmitterProxy;
+    this.aui.Disposable = jspm_packages$github$alloyui$core$master$disposable$Disposable$$Disposable;
+    this.aui.EventHandle = jspm_packages$github$alloyui$core$master$events$EventHandle$$EventHandle;
+    this.aui.EventEmitter = jspm_packages$github$alloyui$core$master$events$EventEmitter$$EventEmitter;
+    this.aui.CancellablePromise = jspm_packages$github$alloyui$core$master$promise$Promise$$CancellablePromise;
+    this.aui.async = jspm_packages$github$alloyui$core$master$promise$Promise$$async;
+    this.aui.WildcardTrie = jspm_packages$github$alloyui$core$master$structs$WildcardTrie$$WildcardTrie;
+    this.aui.Trie = jspm_packages$github$alloyui$core$master$structs$Trie$$Trie;
 }).call(this);

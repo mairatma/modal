@@ -1,5 +1,5 @@
 {
-  "name": "alloyui-modal",
+  "name": "aui-modal",
   "version": "0.0.1",
   "description": "A modal component built with AlloyUI",
   "license": "MIT",
@@ -22,16 +22,18 @@
     "gulp-ignore": "^1.2.1",
     "gulp-load-plugins": "^0.8.0",
     "gulp-soynode": "^1.1.1",
+    "gulp-util": "^3.0.3",
     "gulp-wrapper": "^0.1.5",
+    "jspm": "^0.13.4",
     "run-sequence": "^1.0.1"
   },
   "jspm": {
     "directories": {
-      "lib": "dist"
+      "lib": "build"
     },
     "dependencies": {
-      "alloyui": "github:mairatma/core@es6",
-      "alloyui-tooltip": "github:alloyui/tooltip@master"
+      "aui": "github:alloyui/core@master",
+      "aui-tooltip": "github:alloyui/tooltip@master"
     }
   }
 }
