@@ -30,7 +30,7 @@
   },
   "jspm": {
     "directories": {
-      "lib": "build"
+      "lib": "src"
     },
     "dependencies": {
       "aui": "github:alloyui/core@master",
