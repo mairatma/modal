@@ -1,4 +1,5 @@
-node_modules
-jspm_packages
-config.js
 build
+config.js
+coverage
+jspm_packages
+node_modules

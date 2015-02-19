@@ -15,7 +15,18 @@
   "devDependencies": {
     "alloyui-tasks": "git://github.com/alloyui/tasks",
     "closure-templates": "20130416.0.0",
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "isparta": "git://github.com/douglasduteil/isparta",
+    "karma": "^0.12.31",
+    "karma-6to5-preprocessor": "^3.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coverage": "git://github.com/douglasduteil/karma-coverage#next",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jspm": "^1.1.4",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-safari-launcher": "^0.1.1"
   },
   "jspm": {
     "directories": {
