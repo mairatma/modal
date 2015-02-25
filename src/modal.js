@@ -1,8 +1,10 @@
 'use strict';
 
-import templates from './modal.soy';
+import ComponentRegistry from 'aui/component/ComponentRegistry';
 import SoyComponent from 'aui/component/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
+
+import './modal.soy';
 
 class Modal extends SoyComponent {
   constructor(opt_config) {
@@ -59,6 +61,6 @@ Modal.SURFACES = {
   }
 };
 
-Modal.TEMPLATES = templates;
+Modal.TEMPLATES = ComponentRegistry.Templates.Modal;
 
 export default Modal;

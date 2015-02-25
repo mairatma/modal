@@ -1,66 +1,65 @@
-/* jshint ignore:start */// This file was automatically generated from modal.soy.
+/* jshint ignore:start */
+import ComponentRegistry from 'aui/component/ComponentRegistry';
+var Templates = ComponentRegistry.Templates;
+// This file was automatically generated from modal.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace templates.
+ * @fileoverview Templates in namespace Templates.Modal.
  */
 
-if (typeof templates == 'undefined') { var templates = {}; }
+if (typeof Templates.Modal == 'undefined') { Templates.Modal = {}; }
 
 
 /**
  * @param {Object.<string, *>=} opt_data
  * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-templates.element = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.element = function(opt_data, opt_ignored) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-dialog"><div class="modal-content"><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header" class="modal-header"></div><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-body" class="modal-body"></div><div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-footer" class="modal-footer"></div></div></div>');
 };
 if (goog.DEBUG) {
-  templates.element.soyTemplateName = 'templates.element';
+  Templates.Modal.element.soyTemplateName = 'Templates.Modal.element';
 }
 
 
 /**
  * @param {Object.<string, *>=} opt_data
  * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-templates.body = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.body = function(opt_data, opt_ignored) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml('<p>' + soy.$$escapeHtml(opt_data.bodyContent) + '</p>');
 };
 if (goog.DEBUG) {
-  templates.body.soyTemplateName = 'templates.body';
+  Templates.Modal.body.soyTemplateName = 'Templates.Modal.body';
 }
 
 
 /**
  * @param {Object.<string, *>=} opt_data
  * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-templates.header = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.header = function(opt_data, opt_ignored) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml('<h4 class="modal-title">' + soy.$$escapeHtml(opt_data.headerContent) + '</h4>');
 };
 if (goog.DEBUG) {
-  templates.header.soyTemplateName = 'templates.header';
+  Templates.Modal.header.soyTemplateName = 'Templates.Modal.header';
 }
 
 
 /**
  * @param {Object.<string, *>=} opt_data
  * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-templates.footer = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.footer = function(opt_data, opt_ignored) {
   var output = '';
   var buttonList19 = opt_data.footerButtons;
   var buttonListLen19 = buttonList19.length;
@@ -71,7 +70,6 @@ templates.footer = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(output);
 };
 if (goog.DEBUG) {
-  templates.footer.soyTemplateName = 'templates.footer';
+  Templates.Modal.footer.soyTemplateName = 'Templates.Modal.footer';
 }
-export default templates;
 /* jshint ignore:end */
