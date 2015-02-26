@@ -1,14 +1,14 @@
 {namespace Templates.Modal}
 
 /**
- * @param id
+ * This renders my main element.
  */
 {template .element}
     <div class="modal-dialog">
       <div class="modal-content">
-        <div id="{$id}-header" class="modal-header"></div>
-        <div id="{$id}-body" class="modal-body"></div>
-        <div id="{$id}-footer" class="modal-footer"></div>
+        {delcall Modal.header data="all" /}
+        {delcall Modal.body data="all" /}
+        {delcall Modal.footer data="all" /}
       </div>
     </div>
 {/template}
@@ -17,25 +17,89 @@
  * @param bodyContent
  */
 {template .body}
-<p>{$bodyContent}</p>
+    <div class="modal-body">
+        <p>{$bodyContent}</p>
+    </div>
 {/template}
 
 /**
  * @param headerContent
  */
 {template .header}
-<h4 class="modal-title">{$headerContent}</h4>
+    <div class="modal-header">
+        <h4 class="modal-title">{$headerContent}</h4>
+    </div>
 {/template}
 
 /**
  * @param footerButtons
  */
 {template .footer}
-{foreach $button in $footerButtons}
-    {delcall Component}
-        {param data: $button /}
-        {param name: 'Button' /}
-        {param ref: 'button' + index($button) /}
-    {/delcall}
-{/foreach}
+    <div class="modal-footer">
+        {foreach $button in $footerButtons}
+            {delcall Button}
+                {param data: $button /}
+                {param ref: 'button' + index($button) /}
+                {param children kind="html"}
+                  {delcall Button}
+                    {param data: $button /}
+                    {param ref: 'button-nested0' /}
+                  {/delcall}
+                  {delcall Button}
+                    {param data: $button /}
+                    {param ref: 'button-nested1' /}
+                  {/delcall}
+                {/param}
+            {/delcall}
+        {/foreach}
+    </div>
 {/template}
+
+// TODO: Build the templates below automatically through the soy task.
+
+/**
+ * @param? children
+ * @param data
+ * @param ref
+ */
+{deltemplate Button}
+  {delcall Component}
+    {param children: $children /}
+    {param data: $data /}
+    {param name: 'Button' /}
+    {param ref: $ref /}
+  {/delcall}
+{/deltemplate}
+
+/**
+ * @param id
+ */
+{deltemplate Modal.header}
+  <div id="{$id}-header">
+    {if $ij.renderChildComponents}
+        {call .header data="all" /}
+    {/if}
+  </div>
+{/deltemplate}
+
+/**
+ * @param id
+ */
+{deltemplate Modal.body}
+  <div id="{$id}-body">
+    {if $ij.renderChildComponents}
+        {call .body data="all" /}
+    {/if}
+  </div>
+{/deltemplate}
+
+/**
+ * @param id
+ */
+{deltemplate Modal.footer}
+  <div id="{$id}-footer">
+    {if $ij.renderChildComponents}
+        {call .footer data="all" /}
+    {/if}
+  </div>
+{/deltemplate}

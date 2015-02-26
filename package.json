@@ -14,7 +14,7 @@
   "keywords": [],
   "devDependencies": {
     "alloyui-tasks": "git://github.com/mairatma/alloyui-tasks#templates",
-    "closure-templates": "20130416.0.0",
+    "closure-templates": "^20141017.0.0",
     "gulp": "^3.8.10",
     "isparta": "git://github.com/douglasduteil/isparta",
     "karma": "^0.12.31",
