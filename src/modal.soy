@@ -32,6 +32,10 @@
  */
 {template .footer}
 {foreach $button in $footerButtons}
-<button type="button" class="modal-button {$button.class}">{$button.label}</button>
+    {delcall Component}
+        {param data: $button /}
+        {param name: 'Button' /}
+        {param ref: 'button' + index($button) /}
+    {/delcall}
 {/foreach}
 {/template}

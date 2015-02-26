@@ -35,11 +35,11 @@ describe('Modal', function() {
       modal = new Modal({
         footerButtons: [
           {
-            class: 'btn btn-default',
+            elementClasses: ['btn-default'],
             label: 'Cancel'
           },
           {
-            class: 'btn btn-primary',
+            elementClasses: ['btn-primary'],
             label: 'OK'
           }
         ]

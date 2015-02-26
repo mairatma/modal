@@ -6,6 +6,7 @@ var Templates = ComponentRegistry.Templates;
 
 /**
  * @fileoverview Templates in namespace Templates.Modal.
+ * @hassoydelcall {Component}
  */
 
 if (typeof Templates.Modal == 'undefined') { Templates.Modal = {}; }
@@ -65,7 +66,7 @@ Templates.Modal.footer = function(opt_data, opt_ignored) {
   var buttonListLen19 = buttonList19.length;
   for (var buttonIndex19 = 0; buttonIndex19 < buttonListLen19; buttonIndex19++) {
     var buttonData19 = buttonList19[buttonIndex19];
-    output += '<button type="button" class="modal-button ' + soy.$$escapeHtmlAttribute(buttonData19['class']) + '">' + soy.$$escapeHtml(buttonData19.label) + '</button>';
+    output += soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({data: buttonData19, name: 'Button', ref: 'button' + buttonIndex19}));
   }
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(output);
 };

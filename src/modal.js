@@ -5,6 +5,7 @@ import SoyComponent from 'aui/component/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
 
 import './modal.soy';
+import './button/Button';
 
 class Modal extends SoyComponent {
   constructor(opt_config) {
@@ -13,7 +14,7 @@ class Modal extends SoyComponent {
 
   attached() {
     var instance = this;
-    this.delegate('click', '.modal-button', function(event) {
+    this.delegate('click', 'button', function(event) {
       instance.emit('buttonClicked', {
         button: event.delegateTarget
       });
@@ -28,6 +29,8 @@ class Modal extends SoyComponent {
     this.element.style.display = this.visible ? 'block' : 'none';
   }
 }
+
+ComponentRegistry.register('Modal', Modal);
 
 Modal.ATTRS = {
   bodyContent: {
