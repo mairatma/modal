@@ -1,14 +1,31 @@
 'use strict';
 
-import core from 'aui/core';
 import templates from './modal.soy';
 import SoyComponent from 'aui/component/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
 
-function Modal(opt_config) {
-  Modal.base(this, 'constructor', opt_config);
+class Modal extends SoyComponent {
+  constructor(opt_config) {
+    super(opt_config);
+  }
+
+  attached() {
+    var instance = this;
+    this.delegate('click', '.modal-button', function(event) {
+      instance.emit('buttonClicked', {
+        button: event.delegateTarget
+      });
+    });
+    this.tooltip_ = new Tooltip({
+      content: 'Modal',
+      trigger: this.element.querySelector('.modal-header')
+    }).render();
+  }
+
+  syncVisible() {
+    this.element.style.display = this.visible ? 'block' : 'none';
+  }
 }
-core.inherits(Modal, SoyComponent);
 
 Modal.ATTRS = {
   bodyContent: {
@@ -45,24 +62,5 @@ Modal.SURFACES = {
 };
 
 Modal.TEMPLATES = templates;
-
-Modal.prototype.attached = function() {
-  var instance = this;
-
-  this.delegate('click', '.modal-button', function(event) {
-    instance.emit('buttonClicked', {
-      button: event.delegateTarget
-    });
-  });
-
-  this.tooltip_ = new Tooltip({
-    content: 'Modal',
-    trigger: this.element.querySelector('.modal-header')
-  }).render();
-};
-
-Modal.prototype.syncVisible = function() {
-  this.element.style.display = this.visible ? 'block' : 'none';
-};
 
 export default Modal;
