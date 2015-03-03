@@ -1,0 +1,23 @@
+{namespace Templates.Toolbar}
+
+/**
+ * @param children
+ * @param id
+ */
+{template .element}
+    {delcall ComponentChildren data="all" /}
+{/template}
+
+/**
+ * @param? children
+ * @param data
+ * @param ref
+ */
+{deltemplate Toolbar}
+  {delcall Component}
+    {param children: $children /}
+    {param data: $data /}
+    {param name: 'Toolbar' /}
+    {param ref: $ref /}
+  {/delcall}
+{/deltemplate}

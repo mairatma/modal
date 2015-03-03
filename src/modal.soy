@@ -35,24 +35,20 @@
  * @param footerButtons
  */
 {template .footer}
-    <div class="modal-footer">
+  <div class="modal-footer">
+    {delcall Toolbar}
+      {param data: [] /}
+      {param ref: 'toolbar' /}
+      {param children kind="html"}
         {foreach $button in $footerButtons}
-            {delcall Button}
-                {param data: $button /}
-                {param ref: 'button' + index($button) /}
-                {param children kind="html"}
-                  {delcall Button}
-                    {param data: $button /}
-                    {param ref: 'button-nested0' /}
-                  {/delcall}
-                  {delcall Button}
-                    {param data: $button /}
-                    {param ref: 'button-nested1' /}
-                  {/delcall}
-                {/param}
-            {/delcall}
+          {delcall Button}
+            {param data: $button /}
+            {param ref: 'button' + index($button) /}
+          {/delcall}
         {/foreach}
-    </div>
+      {/param}
+    {/delcall}
+  </div>
 {/template}
 
 // TODO: Build the templates below automatically through the soy task.
