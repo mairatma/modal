@@ -28,27 +28,12 @@ module.exports = function(config) {
       'jspm_packages/?*/**/*.js': ['babel']
     },
 
-    'babelPreprocessor': {
-      options: {
-        sourceMap: true,
-        modules: 'system'
-      }
-    },
-
     reporters: ['coverage', 'progress'],
 
     coverageReporter: {
       instrumenters: { isparta : require('isparta') },
       instrumenter: {
         '**/*.js': 'isparta'
-      },
-      instrumenterOptions: {
-        isparta: {
-          babel: {
-            sourceMap: true,
-            modules: 'system'
-          }
-        }
       },
       reporters: [
         {
