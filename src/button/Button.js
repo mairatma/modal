@@ -4,6 +4,8 @@ import core from 'aui/core';
 import ComponentRegistry from 'aui/component/ComponentRegistry';
 import SoyComponent from 'aui/soy/SoyComponent';
 
+import './button.soy';
+
 class Button extends SoyComponent {
   constructor(opt_config) {
   	super(opt_config);

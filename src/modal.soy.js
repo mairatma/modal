@@ -6,7 +6,7 @@ var Templates = ComponentRegistry.Templates;
 
 /**
  * @fileoverview Templates in namespace Templates.Modal.
- * @hassoydeltemplate {Button}
+ * @hassoydeltemplate {Modal}
  * @hassoydeltemplate {Modal.body}
  * @hassoydeltemplate {Modal.footer}
  * @hassoydeltemplate {Modal.header}
@@ -98,13 +98,13 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s28_e4ba703e = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Button', ref: opt_data.ref}, null, opt_ijData)));
+Templates.Modal.__deltemplate_s28_45b138fb = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Modal', ref: opt_data.ref}, null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s28_e4ba703e.soyTemplateName = 'Templates.Modal.__deltemplate_s28_e4ba703e';
+  Templates.Modal.__deltemplate_s28_45b138fb.soyTemplateName = 'Templates.Modal.__deltemplate_s28_45b138fb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Button'), '', 0, Templates.Modal.__deltemplate_s28_e4ba703e);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal.__deltemplate_s28_45b138fb);
 
 
 /**
