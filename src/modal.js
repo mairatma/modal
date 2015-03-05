@@ -47,8 +47,6 @@ Modal.ATTRS = {
   }
 };
 
-Modal.ATTRS_SYNC = ['visible'];
-
 Modal.SURFACES = {
   body: {
     renderAttrs: ['bodyContent']
