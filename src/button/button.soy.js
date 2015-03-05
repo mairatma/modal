@@ -35,11 +35,11 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Button.__deltemplate_s61_e4ba703e = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Button.__deltemplate_s70_e4ba703e = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Button', ref: opt_data.ref}, null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Button.__deltemplate_s61_e4ba703e.soyTemplateName = 'Templates.Button.__deltemplate_s61_e4ba703e';
+  Templates.Button.__deltemplate_s70_e4ba703e.soyTemplateName = 'Templates.Button.__deltemplate_s70_e4ba703e';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Button'), '', 0, Templates.Button.__deltemplate_s61_e4ba703e);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Button'), '', 0, Templates.Button.__deltemplate_s70_e4ba703e);
 /* jshint ignore:end */

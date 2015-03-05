@@ -20,10 +20,15 @@ class Modal extends SoyComponent {
         button: event.delegateTarget
       });
     });
-    this.tooltip_ = new Tooltip({
-      content: 'Modal',
-      trigger: this.element.querySelector('.modal-header')
-    }).render();
+  }
+
+  handleMouseOver() {
+    this.components.tooltip.trigger = this.getSurfaceElement('header');
+    this.components.tooltip.visible = true;
+  }
+
+  handleMouseOut() {
+    this.components.tooltip.visible = false;
   }
 
   syncVisible() {

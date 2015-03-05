@@ -11,6 +11,10 @@
         {delcall Modal.footer data="all" /}
       </div>
     </div>
+    {delcall Tooltip}
+      {param ref: 'tooltip' /}
+      {param data: [ 'content': 'Modal' ] /}
+    {/delcall}
 {/template}
 
 /**
@@ -26,7 +30,7 @@
  * @param headerContent
  */
 {template .header}
-    <div class="modal-header">
+    <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
         <h4 class="modal-title">{$headerContent}</h4>
     </div>
 {/template}
@@ -52,6 +56,20 @@
 {/template}
 
 // TODO: Build the templates below automatically through the soy task.
+
+/**
+ * @param? children
+ * @param data
+ * @param ref
+ */
+{deltemplate Tooltip}
+  {delcall Component}
+    {param children: $children /}
+    {param data: $data /}
+    {param name: 'Tooltip' /}
+    {param ref: $ref /}
+  {/delcall}
+{/deltemplate}
 
 /**
  * @param? children
