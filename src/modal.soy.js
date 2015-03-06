@@ -76,7 +76,7 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 Templates.Modal.footer = function(opt_data, opt_ignored, opt_ijData) {
-  var output = '<div class="modal-footer">';
+  var output = '<div class="modal-footer" onclick="handleButtonClick">';
   var param23 = '';
   var buttonList24 = opt_data.footerButtons;
   var buttonListLen24 = buttonList24.length;

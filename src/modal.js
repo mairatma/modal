@@ -5,20 +5,15 @@ import SoyComponent from 'aui/soy/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
 
 import './modal.soy';
-import './button/Button';
-import './toolbar/Toolbar';
 
 class Modal extends SoyComponent {
   constructor(opt_config) {
     super(opt_config);
   }
 
-  attached() {
-    var instance = this;
-    this.delegate('click', 'button', function(event) {
-      instance.emit('buttonClicked', {
-        button: event.delegateTarget
-      });
+  handleButtonClick() {
+    this.emit('buttonClicked', {
+      button: event.target
     });
   }
 
