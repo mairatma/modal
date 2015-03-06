@@ -55,18 +55,6 @@ Modal.ATTRS = {
   }
 };
 
-Modal.SURFACES = {
-  body: {
-    renderAttrs: ['bodyContent']
-  },
-  footer: {
-    renderAttrs: ['footerButtons']
-  },
-  header: {
-    renderAttrs: ['headerContent']
-  }
-};
-
 Modal.TEMPLATES = ComponentRegistry.Templates.Modal;
 
 export default Modal;
