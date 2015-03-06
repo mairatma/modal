@@ -1,5 +1,6 @@
 'use strict';
 
+import dom from 'aui/dom/dom';
 import ComponentRegistry from 'aui/component/ComponentRegistry';
 import SoyComponent from 'aui/soy/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
@@ -14,9 +15,12 @@ class Modal extends SoyComponent {
   }
 
   handleButtonClick() {
-    this.emit('buttonClicked', {
-      button: event.target
-    });
+    var target = event.target;
+    if (dom.match(target, 'button')) {
+      this.emit('buttonClicked', {
+        button: target
+      });
+    }
   }
 
   handleMouseOver() {
