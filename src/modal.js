@@ -5,6 +5,8 @@ import SoyComponent from 'aui/soy/SoyComponent';
 import Tooltip from 'aui-tooltip/tooltip';
 
 import './modal.soy';
+import './button/Button';
+import './toolbar/Toolbar';
 
 class Modal extends SoyComponent {
   constructor(opt_config) {
