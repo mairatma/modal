@@ -1,22 +1,8 @@
 {namespace Templates.Button}
 
 /**
- * @param label
  */
 {template .element}
-    {$label}
+  {@param label:?}
+  {$label}
 {/template}
-
-/**
- * @param? children
- * @param data
- * @param ref
- */
-{deltemplate Button}
-  {delcall Component}
-    {param children: $children /}
-    {param data: $data /}
-    {param name: 'Button' /}
-    {param ref: $ref /}
-  {/delcall}
-{/deltemplate}

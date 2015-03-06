@@ -1,25 +1,9 @@
 {namespace Templates.Toolbar}
 
 /**
- * @param children
- * @param id
  */
 {template .element}
-    {delcall ComponentChildren data="all" /}
+  {@param children:?}
+  {@param id:?}
+  {delcall ComponentChildren data="all" /}
 {/template}
-
-// TODO: Build the templates below automatically through the soy task.
-
-/**
- * @param? children
- * @param data
- * @param ref
- */
-{deltemplate Toolbar}
-  {delcall Component}
-    {param children: $children /}
-    {param data: $data /}
-    {param name: 'Toolbar' /}
-    {param ref: $ref /}
-  {/delcall}
-{/deltemplate}

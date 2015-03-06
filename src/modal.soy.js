@@ -10,7 +10,6 @@ var Templates = ComponentRegistry.Templates;
  * @hassoydeltemplate {Modal.body}
  * @hassoydeltemplate {Modal.footer}
  * @hassoydeltemplate {Modal.header}
- * @hassoydeltemplate {Tooltip}
  * @hassoydelcall {Button}
  * @hassoydelcall {Component}
  * @hassoydelcall {Modal.body}
@@ -31,7 +30,7 @@ if (typeof Templates.Modal == 'undefined') { Templates.Modal = {}; }
  * @suppress {checkTypes}
  */
 Templates.Modal.element = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-dialog"><div class="modal-content">' + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', true)(opt_data, null, opt_ijData) + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', true)(opt_data, null, opt_ijData) + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', true)(opt_data, null, opt_ijData) + '</div></div>' + soy.$$getDelegateFn(soy.$$getDelTemplateId('Tooltip'), '', true)({ref: 'tooltip', data: {content: 'Modal'}}, null, opt_ijData));
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-dialog"><div class="modal-content">' + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', true)(opt_data, null, opt_ijData) + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', true)(opt_data, null, opt_ijData) + soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', true)(opt_data, null, opt_ijData) + '</div></div>' + soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Tooltip'), '', true)({ref: 'tooltip', data: {content: 'Modal'}}, null, opt_ijData)));
 };
 if (goog.DEBUG) {
   Templates.Modal.element.soyTemplateName = 'Templates.Modal.element';
@@ -39,7 +38,9 @@ if (goog.DEBUG) {
 
 
 /**
- * @param {Object.<string, *>=} opt_data
+ * @param {{
+ *    bodyContent: (?)
+ * }} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
@@ -54,7 +55,9 @@ if (goog.DEBUG) {
 
 
 /**
- * @param {Object.<string, *>=} opt_data
+ * @param {{
+ *    headerContent: (?)
+ * }} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
@@ -69,7 +72,9 @@ if (goog.DEBUG) {
 
 
 /**
- * @param {Object.<string, *>=} opt_data
+ * @param {{
+ *    footerButtons: (?)
+ * }} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}
@@ -100,29 +105,13 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s31_8d49094e = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Tooltip', ref: opt_data.ref}, null, opt_ijData)));
-};
-if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s31_8d49094e.soyTemplateName = 'Templates.Modal.__deltemplate_s31_8d49094e';
-}
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Tooltip'), '', 0, Templates.Modal.__deltemplate_s31_8d49094e);
-
-
-/**
- * @param {Object.<string, *>=} opt_data
- * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
- * @return {!soydata.SanitizedHtml}
- * @suppress {checkTypes}
- */
-Templates.Modal.__deltemplate_s37_45b138fb = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s31_45b138fb = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Modal', ref: opt_data.ref}, null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s37_45b138fb.soyTemplateName = 'Templates.Modal.__deltemplate_s37_45b138fb';
+  Templates.Modal.__deltemplate_s31_45b138fb.soyTemplateName = 'Templates.Modal.__deltemplate_s31_45b138fb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal.__deltemplate_s37_45b138fb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal.__deltemplate_s31_45b138fb);
 
 
 /**
@@ -132,29 +121,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s43_b8354b7d = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header">' + ((opt_ijData.renderChildComponents) ? Templates.Modal.header(opt_data, null, opt_ijData) : '') + '</div>');
-};
-if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s43_b8354b7d.soyTemplateName = 'Templates.Modal.__deltemplate_s43_b8354b7d';
-}
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', 0, Templates.Modal.__deltemplate_s43_b8354b7d);
-
-
-/**
- * @param {Object.<string, *>=} opt_data
- * @param {(null|undefined)=} opt_ignored
- * @param {Object.<string, *>=} opt_ijData
- * @return {!soydata.SanitizedHtml}
- * @suppress {checkTypes}
- */
-Templates.Modal.__deltemplate_s51_90747620 = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s37_90747620 = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-body">' + ((opt_ijData.renderChildComponents) ? Templates.Modal.body(opt_data, null, opt_ijData) : '') + '</div>');
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s51_90747620.soyTemplateName = 'Templates.Modal.__deltemplate_s51_90747620';
+  Templates.Modal.__deltemplate_s37_90747620.soyTemplateName = 'Templates.Modal.__deltemplate_s37_90747620';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.Modal.__deltemplate_s51_90747620);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.Modal.__deltemplate_s37_90747620);
 
 
 /**
@@ -164,11 +137,32 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s59_231e36e7 = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s45_b8354b7d = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header">' + ((opt_ijData.renderChildComponents) ? Templates.Modal.header(opt_data, null, opt_ijData) : '') + '</div>');
+};
+if (goog.DEBUG) {
+  Templates.Modal.__deltemplate_s45_b8354b7d.soyTemplateName = 'Templates.Modal.__deltemplate_s45_b8354b7d';
+}
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', 0, Templates.Modal.__deltemplate_s45_b8354b7d);
+
+
+/**
+ * @param {Object.<string, *>=} opt_data
+ * @param {(null|undefined)=} opt_ignored
+ * @param {Object.<string, *>=} opt_ijData
+ * @return {!soydata.SanitizedHtml}
+ * @suppress {checkTypes}
+ */
+Templates.Modal.__deltemplate_s53_231e36e7 = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-footer">' + ((opt_ijData.renderChildComponents) ? Templates.Modal.footer(opt_data, null, opt_ijData) : '') + '</div>');
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s59_231e36e7.soyTemplateName = 'Templates.Modal.__deltemplate_s59_231e36e7';
+  Templates.Modal.__deltemplate_s53_231e36e7.soyTemplateName = 'Templates.Modal.__deltemplate_s53_231e36e7';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', 0, Templates.Modal.__deltemplate_s59_231e36e7);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', 0, Templates.Modal.__deltemplate_s53_231e36e7);
+
+Templates.Modal.element.params = [];
+Templates.Modal.body.params = ["bodyContent"];
+Templates.Modal.header.params = ["headerContent"];
+Templates.Modal.footer.params = ["footerButtons"];
 /* jshint ignore:end */

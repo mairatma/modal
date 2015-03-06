@@ -18,27 +18,27 @@
 {/template}
 
 /**
- * @param bodyContent
  */
 {template .body}
+    {@param bodyContent:?}
     <div class="modal-body">
         <p>{$bodyContent}</p>
     </div>
 {/template}
 
 /**
- * @param headerContent
  */
 {template .header}
+    {@param headerContent:?}
     <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
         <h4 class="modal-title">{$headerContent}</h4>
     </div>
 {/template}
 
 /**
- * @param footerButtons
  */
 {template .footer}
+  {@param footerButtons:?}
   <div class="modal-footer" onclick="handleButtonClick">
     {delcall Toolbar}
       {param data: [] /}
@@ -54,66 +54,3 @@
     {/delcall}
   </div>
 {/template}
-
-// TODO: Build the templates below automatically through the soy task.
-
-/**
- * @param? children
- * @param data
- * @param ref
- */
-{deltemplate Tooltip}
-  {delcall Component}
-    {param children: $children /}
-    {param data: $data /}
-    {param name: 'Tooltip' /}
-    {param ref: $ref /}
-  {/delcall}
-{/deltemplate}
-
-/**
- * @param? children
- * @param data
- * @param ref
- */
-{deltemplate Modal}
-  {delcall Component}
-    {param children: $children /}
-    {param data: $data /}
-    {param name: 'Modal' /}
-    {param ref: $ref /}
-  {/delcall}
-{/deltemplate}
-
-/**
- * @param id
- */
-{deltemplate Modal.header}
-  <div id="{$id}-header">
-    {if $ij.renderChildComponents}
-        {call .header data="all" /}
-    {/if}
-  </div>
-{/deltemplate}
-
-/**
- * @param id
- */
-{deltemplate Modal.body}
-  <div id="{$id}-body">
-    {if $ij.renderChildComponents}
-        {call .body data="all" /}
-    {/if}
-  </div>
-{/deltemplate}
-
-/**
- * @param id
- */
-{deltemplate Modal.footer}
-  <div id="{$id}-footer">
-    {if $ij.renderChildComponents}
-        {call .footer data="all" /}
-    {/if}
-  </div>
-{/deltemplate}
