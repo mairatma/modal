@@ -12,8 +12,8 @@
       </div>
     </div>
     {delcall Tooltip}
+      {param content: 'Modal' /}
       {param ref: 'tooltip' /}
-      {param data: [ 'content': 'Modal' ] /}
     {/delcall}
 {/template}
 
@@ -41,16 +41,14 @@
   {@param footerButtons:?}
   <div class="modal-footer" onclick="handleButtonClick">
     {delcall Toolbar}
-      {param data: [] /}
-      {param ref: 'toolbar' /}
       {param children kind="html"}
         {foreach $button in $footerButtons}
-          {delcall Button}
-            {param data: $button /}
+          {delcall Button data="$button"}
             {param ref: 'button' + index($button) /}
           {/delcall}
         {/foreach}
       {/param}
+      {param ref: 'toolbar' /}
     {/delcall}
   </div>
 {/template}

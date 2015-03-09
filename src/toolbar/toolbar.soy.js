@@ -39,13 +39,13 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s73_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)({children: opt_data.children, data: opt_data.data, name: 'Toolbar', ref: opt_data.ref}, null, opt_ijData)));
+Templates.Toolbar.__deltemplate_s65_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)(soy.$$augmentMap(opt_data, {componentName: 'Toolbar'}), null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s73_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s73_ef0c27aa';
+  Templates.Toolbar.__deltemplate_s65_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s65_ef0c27aa';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s73_ef0c27aa);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s65_ef0c27aa);
 
 Templates.Toolbar.element.params = ["children","id"];
 /* jshint ignore:end */
