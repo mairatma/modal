@@ -15,10 +15,7 @@ if (typeof Templates.Toolbar == 'undefined') { Templates.Toolbar = {}; }
 
 
 /**
- * @param {{
- *    children: (?),
- *    id: (?)
- * }} opt_data
+ * @param {Object.<string, *>=} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object.<string, *>=} opt_ijData
  * @return {!soydata.SanitizedHtml}

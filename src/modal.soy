@@ -18,27 +18,27 @@
 {/template}
 
 /**
+ * @param bodyContent
  */
 {template .body}
-    {@param bodyContent:?}
     <div class="modal-body">
         <p>{$bodyContent}</p>
     </div>
 {/template}
 
 /**
+ * @param headerContent
  */
 {template .header}
-    {@param headerContent:?}
     <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
         <h4 class="modal-title">{$headerContent}</h4>
     </div>
 {/template}
 
 /**
+ * @param footerButtons
  */
 {template .footer}
-  {@param footerButtons:?}
   <div class="modal-footer" onclick="handleButtonClick">
     {delcall Toolbar}
       {param children kind="html"}
