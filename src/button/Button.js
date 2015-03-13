@@ -11,8 +11,10 @@ class Button extends SoyComponent {
   	super(opt_config);
   }
 
-  syncLabel() {
-  	this.element.innerHTML = this.label;
+  syncLabel(newVal, prevVal) {
+  	if (prevVal) {
+  		this.element.innerHTML = this.label;
+  	}
   }
 }
 ComponentRegistry.register('Button', Button);

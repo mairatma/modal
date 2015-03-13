@@ -3,6 +3,19 @@
 /**
  * @param label
  */
-{template .element}
+{template .content}
   {$label}
+{/template}
+
+/**
+ * @param? elementContent
+ * @param? elementClasses
+ * @param id
+ */
+{template .contentElement}
+	<button id="{$id}" class="btn {$elementClasses ? $elementClasses : ''}" data-component>
+		{if $elementContent}
+			{$elementContent}
+		{/if}
+	</button>
 {/template}

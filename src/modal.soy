@@ -2,8 +2,9 @@
 
 /**
  * This renders my main element.
+ * @param id
  */
-{template .element}
+{template .content}
     <div class="modal-dialog">
       <div class="modal-content">
         {delcall Modal.header data="all" /}
@@ -13,7 +14,7 @@
     </div>
     {delcall Tooltip}
       {param content: 'Modal' /}
-      {param ref: 'tooltip' /}
+      {param id: $id + '-tooltip' /}
     {/delcall}
 {/template}
 
@@ -37,6 +38,7 @@
 
 /**
  * @param footerButtons
+ * @param id
  */
 {template .footer}
   <div class="modal-footer" onclick="handleButtonClick">
@@ -44,11 +46,11 @@
       {param children kind="html"}
         {foreach $button in $footerButtons}
           {delcall Button data="$button"}
-            {param ref: 'button' + index($button) /}
+            {param id: $id + '-button' + index($button) /}
           {/delcall}
         {/foreach}
       {/param}
-      {param ref: 'toolbar' /}
+      {param id: $id + '-toolbar' /}
     {/delcall}
   </div>
 {/template}

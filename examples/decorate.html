@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alloy Modal</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../build/modal.css">
+
+    <script src="../node_modules/closure-templates/soyutils.js"></script>
+    <script src="../build/modal.js"></script>
+</head>
+<body>
+    <h1>Modal</h1>
+    <div id="modal" class="modal" data-component style="display: block;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="modal-header">
+            <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
+              <h4 class="modal-title">Modal header</h4>
+            </div>
+          </div>
+          <div id="modal-body">
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+          </div>
+          <div id="modal-footer">
+            <div class="modal-footer" onclick="handleButtonClick">
+              <div id="modal-toolbar" class="" data-component>
+                <div id="modal-toolbar-children-placeholder" data-component-children><button id="modal-button0" class="btn btn-default" data-component>Cancel</button><button id="modal-button1" class="btn btn-primary" data-component>OK</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modal-tooltip" class="" data-component style="opacity: 0;">
+        <div class="tooltip-arrow"></div>
+        <div id="modal-tooltip-innerContent">
+          <div class="tooltip-inner">
+            Modal
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        window.modalComponent = new aui.Modal({
+            bodyContent: 'One fine body…',
+            element: '#modal',
+            headerContent: 'Modal header',
+            id: 'modal',
+            visible: true,
+            footerButtons: [
+                {
+                  elementClasses: 'btn-default',
+                  label: 'Cancel'
+                },
+                {
+                  elementClasses: 'btn-primary',
+                  label: 'OK'
+                }
+            ]
+        }).decorate();
+
+        modalComponent.on('buttonClicked', function(event) {
+          if (event.button.classList.contains('btn-primary')) {
+            alert('Action done');
+          }
+          modalComponent.visible = false;
+        });
+    </script>
+</body>
+</html>

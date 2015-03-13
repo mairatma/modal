@@ -24,12 +24,12 @@ class Modal extends SoyComponent {
   }
 
   handleMouseOver() {
-    this.components.tooltip.trigger = this.getSurfaceElement('header');
-    this.components.tooltip.visible = true;
+    this.components[this.id + '-tooltip'].trigger = this.getSurfaceElement('header');
+    this.components[this.id + '-tooltip'].visible = true;
   }
 
   handleMouseOut() {
-    this.components.tooltip.visible = false;
+    this.components[this.id + '-tooltip'].visible = false;
   }
 
   syncVisible() {
