@@ -6,9 +6,11 @@ var Templates = ComponentRegistry.Templates;
 
 /**
  * @fileoverview Templates in namespace Templates.Toolbar.
+ * @hassoydeltemplate {ComponentTemplate}
  * @hassoydeltemplate {Toolbar}
  * @hassoydelcall {Component}
  * @hassoydelcall {ComponentChildren}
+ * @hassoydelcall {ComponentElement}
  */
 
 if (typeof Templates.Toolbar == 'undefined') { Templates.Toolbar = {}; }
@@ -36,13 +38,29 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s65_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Toolbar.__deltemplate_s73_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)(soy.$$augmentMap(opt_data, {componentName: 'Toolbar'}), null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s65_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s65_ef0c27aa';
+  Templates.Toolbar.__deltemplate_s73_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s73_ef0c27aa';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s65_ef0c27aa);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s73_ef0c27aa);
 
-Templates.Toolbar.element.params = [];
+
+/**
+ * @param {Object.<string, *>=} opt_data
+ * @param {(null|undefined)=} opt_ignored
+ * @param {Object.<string, *>=} opt_ijData
+ * @return {!soydata.SanitizedHtml}
+ * @suppress {checkTypes}
+ */
+Templates.Toolbar.__deltemplate_s76_d3e7c2ff = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Toolbar', true)(soy.$$augmentMap(opt_data, {contents: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + Templates.Toolbar.element(opt_data, null, opt_ijData))}), null, opt_ijData)));
+};
+if (goog.DEBUG) {
+  Templates.Toolbar.__deltemplate_s76_d3e7c2ff.soyTemplateName = 'Templates.Toolbar.__deltemplate_s76_d3e7c2ff';
+}
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Toolbar', 0, Templates.Toolbar.__deltemplate_s76_d3e7c2ff);
+
+Templates.Toolbar.element.params = ["children","id"];
 /* jshint ignore:end */

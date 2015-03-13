@@ -12,6 +12,4 @@ class Toolbar extends SoyComponent {
 }
 ComponentRegistry.register('Toolbar', Toolbar);
 
-Toolbar.TEMPLATES = ComponentRegistry.Templates.Toolbar;
-
 export default Toolbar;

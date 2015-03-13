@@ -59,6 +59,4 @@ Modal.ATTRS = {
   }
 };
 
-Modal.TEMPLATES = ComponentRegistry.Templates.Modal;
-
 export default Modal;
