@@ -155,7 +155,8 @@ if (goog.DEBUG) {
 }
 soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', 0, Templates.Modal.__deltemplate_s48_231e36e7);
 
-Templates.Modal.body.params = ["bodyContent"];
-Templates.Modal.header.params = ["headerContent"];
-Templates.Modal.footer.params = ["footerButtons"];
+Templates.Modal.element.params = [];
+Templates.Modal.body.params = [];
+Templates.Modal.header.params = [];
+Templates.Modal.footer.params = [];
 /* jshint ignore:end */

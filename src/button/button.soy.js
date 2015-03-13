@@ -43,5 +43,5 @@ if (goog.DEBUG) {
 }
 soy.$$registerDelegateFn(soy.$$getDelTemplateId('Button'), '', 0, Templates.Button.__deltemplate_s59_e4ba703e);
 
-Templates.Button.element.params = ["label"];
+Templates.Button.element.params = [];
 /* jshint ignore:end */

@@ -44,5 +44,5 @@ if (goog.DEBUG) {
 }
 soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s65_ef0c27aa);
 
-Templates.Toolbar.element.params = ["children","id"];
+Templates.Toolbar.element.params = [];
 /* jshint ignore:end */

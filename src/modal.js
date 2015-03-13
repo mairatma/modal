@@ -44,7 +44,7 @@ Modal.ATTRS = {
     value: ''
   },
   elementClasses: {
-    value: ['modal']
+    value: 'modal'
   },
   footerButtons: {
     valueFn: function() {
