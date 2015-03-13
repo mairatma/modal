@@ -23,7 +23,7 @@ Button.ATTRS = {
   }
 };
 
-Button.ELEMENT_CLASSES = ['btn'];
+Button.ELEMENT_CLASSES = 'btn';
 
 Button.ELEMENT_TAG_NAME = 'button';
 
