@@ -3,11 +3,11 @@
 import dom from 'aui/dom/dom';
 import ComponentRegistry from 'aui/component/ComponentRegistry';
 import SoyComponent from 'aui/soy/SoyComponent';
-import Tooltip from 'aui-tooltip/tooltip';
 
 import './modal.soy';
 import './button/Button';
 import './toolbar/Toolbar';
+import 'aui-tooltip/tooltip';
 
 class Modal extends SoyComponent {
   constructor(opt_config) {

@@ -1,6 +1,5 @@
 'use strict';
 
-import core from 'aui/core';
 import ComponentRegistry from 'aui/component/ComponentRegistry';
 import SoyComponent from 'aui/soy/SoyComponent';
 
