@@ -22,10 +22,20 @@
  * @param bodyContent
  */
 {template .body}
-    <div class="modal-body">
-        <p>{$bodyContent}</p>
-    </div>
+    <p>{$bodyContent}</p>
 {/template}
+
+/**
+ * @param? elementContent
+ * @param id
+ */
+{deltemplate Modal.body variant="'element'"}
+    <div id="{$id}-body" class="modal-body">
+        {if $elementContent}
+            {$elementContent}
+        {/if}
+    </div>
+{/deltemplate}
 
 /**
  * @param headerContent
