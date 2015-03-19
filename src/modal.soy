@@ -41,7 +41,7 @@
  * @param headerContent
  */
 {template .header}
-    <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
+    <div class="modal-header" data-onmouseover="handleMouseOver" data-onmouseout="handleMouseOut">
         <h4 class="modal-title">{$headerContent}</h4>
     </div>
 {/template}
@@ -51,7 +51,7 @@
  * @param id
  */
 {template .footer}
-  <div class="modal-footer" onclick="handleButtonClick">
+  <div class="modal-footer" data-onclick="handleButtonClick">
     {delcall Toolbar}
       {param children kind="html"}
         {foreach $button in $footerButtons}

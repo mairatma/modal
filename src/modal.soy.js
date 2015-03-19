@@ -80,7 +80,7 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), 'element', 0, Tem
  * @suppress {checkTypes}
  */
 Templates.Modal.header = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut"><h4 class="modal-title">' + soy.$$escapeHtml(opt_data.headerContent) + '</h4></div>');
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div class="modal-header" data-onmouseover="handleMouseOver" data-onmouseout="handleMouseOut"><h4 class="modal-title">' + soy.$$escapeHtml(opt_data.headerContent) + '</h4></div>');
 };
 if (goog.DEBUG) {
   Templates.Modal.header.soyTemplateName = 'Templates.Modal.header';
@@ -95,7 +95,7 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 Templates.Modal.footer = function(opt_data, opt_ignored, opt_ijData) {
-  var output = '<div class="modal-footer" onclick="handleButtonClick">';
+  var output = '<div class="modal-footer" data-onclick="handleButtonClick">';
   var param29 = '';
   var buttonList30 = opt_data.footerButtons;
   var buttonListLen30 = buttonList30.length;
