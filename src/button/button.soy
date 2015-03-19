@@ -14,8 +14,6 @@
  */
 {deltemplate Button variant="'element'"}
 	<button id="{$id}" class="btn {$elementClasses ? $elementClasses : ''}" data-component>
-		{if $elementContent}
-			{$elementContent}
-		{/if}
+		{$elementContent}
 	</button>
 {/deltemplate}

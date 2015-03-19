@@ -64,7 +64,7 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 Templates.Modal.__deltemplate_s15_65c2d4d4 = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-body" class="modal-body">' + ((opt_data.elementContent) ? soy.$$escapeHtml(opt_data.elementContent) : '') + '</div>');
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-body" class="modal-body">' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
 };
 if (goog.DEBUG) {
   Templates.Modal.__deltemplate_s15_65c2d4d4.soyTemplateName = 'Templates.Modal.__deltemplate_s15_65c2d4d4';
@@ -96,14 +96,14 @@ if (goog.DEBUG) {
  */
 Templates.Modal.footer = function(opt_data, opt_ignored, opt_ijData) {
   var output = '<div class="modal-footer" data-onclick="handleButtonClick">';
-  var param29 = '';
-  var buttonList30 = opt_data.footerButtons;
-  var buttonListLen30 = buttonList30.length;
-  for (var buttonIndex30 = 0; buttonIndex30 < buttonListLen30; buttonIndex30++) {
-    var buttonData30 = buttonList30[buttonIndex30];
-    param29 += soy.$$getDelegateFn(soy.$$getDelTemplateId('Button'), '', true)(soy.$$augmentMap(buttonData30, {id: opt_data.id + '-button' + buttonIndex30}), null, opt_ijData);
+  var param27 = '';
+  var buttonList28 = opt_data.footerButtons;
+  var buttonListLen28 = buttonList28.length;
+  for (var buttonIndex28 = 0; buttonIndex28 < buttonListLen28; buttonIndex28++) {
+    var buttonData28 = buttonList28[buttonIndex28];
+    param27 += soy.$$getDelegateFn(soy.$$getDelTemplateId('Button'), '', true)(soy.$$augmentMap(buttonData28, {id: opt_data.id + '-button' + buttonIndex28}), null, opt_ijData);
   }
-  output += soy.$$getDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', true)({children: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks(param29), id: opt_data.id + '-toolbar'}, null, opt_ijData);
+  output += soy.$$getDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', true)({children: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks(param27), id: opt_data.id + '-toolbar'}, null, opt_ijData);
   output += '</div>';
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(output);
 };
@@ -119,13 +119,13 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s37_45b138fb = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s35_45b138fb = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)(soy.$$augmentMap(opt_data, {componentName: 'Modal'}), null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s37_45b138fb.soyTemplateName = 'Templates.Modal.__deltemplate_s37_45b138fb';
+  Templates.Modal.__deltemplate_s35_45b138fb.soyTemplateName = 'Templates.Modal.__deltemplate_s35_45b138fb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal.__deltemplate_s37_45b138fb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal.__deltemplate_s35_45b138fb);
 
 
 /**
@@ -135,13 +135,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), '', 0, Templates.Modal
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s40_29e4e741 = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Modal', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + Templates.Modal.content(opt_data, null, opt_ijData))}), null, opt_ijData));
+Templates.Modal.__deltemplate_s38_29e4e741 = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Modal', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + ((opt_ijData.renderChildComponents) ? Templates.Modal.content(opt_data, null, opt_ijData) : ''))}), null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s40_29e4e741.soyTemplateName = 'Templates.Modal.__deltemplate_s40_29e4e741';
+  Templates.Modal.__deltemplate_s38_29e4e741.soyTemplateName = 'Templates.Modal.__deltemplate_s38_29e4e741';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Modal', 0, Templates.Modal.__deltemplate_s40_29e4e741);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Modal', 0, Templates.Modal.__deltemplate_s38_29e4e741);
 
 
 /**
@@ -152,7 +152,7 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Modal', 0
  * @suppress {checkTypes}
  */
 Templates.Modal.__deltemplate_s44_df8ef55a = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '" class="modal ' + soy.$$escapeHtmlAttribute(opt_data.elementClasses ? opt_data.elementClasses : '') + '" data-component>' + ((opt_data.elementContent) ? soy.$$escapeHtml(opt_data.elementContent) : '') + '</div>');
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '" class="modal ' + soy.$$escapeHtmlAttribute(opt_data.elementClasses ? opt_data.elementClasses : '') + '" data-component>' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
 };
 if (goog.DEBUG) {
   Templates.Modal.__deltemplate_s44_df8ef55a.soyTemplateName = 'Templates.Modal.__deltemplate_s44_df8ef55a';
@@ -167,13 +167,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal'), 'element', 0, Template
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s54_31c78f9d = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s52_31c78f9d = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal'), 'element', true)(opt_data, null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s54_31c78f9d.soyTemplateName = 'Templates.Modal.__deltemplate_s54_31c78f9d';
+  Templates.Modal.__deltemplate_s52_31c78f9d.soyTemplateName = 'Templates.Modal.__deltemplate_s52_31c78f9d';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Modal', 0, Templates.Modal.__deltemplate_s54_31c78f9d);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Modal', 0, Templates.Modal.__deltemplate_s52_31c78f9d);
 
 
 /**
@@ -183,13 +183,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Modal', 0,
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s56_90747620 = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s54_90747620 = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.body'), 'element', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + ((opt_ijData.renderChildComponents) ? Templates.Modal.body(opt_data, null, opt_ijData) : ''))}), null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s56_90747620.soyTemplateName = 'Templates.Modal.__deltemplate_s56_90747620';
+  Templates.Modal.__deltemplate_s54_90747620.soyTemplateName = 'Templates.Modal.__deltemplate_s54_90747620';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.Modal.__deltemplate_s56_90747620);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.Modal.__deltemplate_s54_90747620);
 
 
 /**
@@ -199,13 +199,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.body'), '', 0, Templates.
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s62_499dc9aa = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header">' + ((opt_data.elementContent) ? soy.$$escapeHtml(opt_data.elementContent) : '') + '</div>');
+Templates.Modal.__deltemplate_s60_499dc9aa = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-header">' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s62_499dc9aa.soyTemplateName = 'Templates.Modal.__deltemplate_s62_499dc9aa';
+  Templates.Modal.__deltemplate_s60_499dc9aa.soyTemplateName = 'Templates.Modal.__deltemplate_s60_499dc9aa';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), 'element', 0, Templates.Modal.__deltemplate_s62_499dc9aa);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), 'element', 0, Templates.Modal.__deltemplate_s60_499dc9aa);
 
 
 /**
@@ -215,13 +215,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), 'element', 0, T
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s70_b8354b7d = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s66_b8354b7d = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.header'), 'element', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + ((opt_ijData.renderChildComponents) ? Templates.Modal.header(opt_data, null, opt_ijData) : ''))}), null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s70_b8354b7d.soyTemplateName = 'Templates.Modal.__deltemplate_s70_b8354b7d';
+  Templates.Modal.__deltemplate_s66_b8354b7d.soyTemplateName = 'Templates.Modal.__deltemplate_s66_b8354b7d';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', 0, Templates.Modal.__deltemplate_s70_b8354b7d);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', 0, Templates.Modal.__deltemplate_s66_b8354b7d);
 
 
 /**
@@ -231,13 +231,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.header'), '', 0, Template
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s76_c9897a65 = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-footer">' + ((opt_data.elementContent) ? soy.$$escapeHtml(opt_data.elementContent) : '') + '</div>');
+Templates.Modal.__deltemplate_s72_c9897a65 = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '-footer">' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s76_c9897a65.soyTemplateName = 'Templates.Modal.__deltemplate_s76_c9897a65';
+  Templates.Modal.__deltemplate_s72_c9897a65.soyTemplateName = 'Templates.Modal.__deltemplate_s72_c9897a65';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), 'element', 0, Templates.Modal.__deltemplate_s76_c9897a65);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), 'element', 0, Templates.Modal.__deltemplate_s72_c9897a65);
 
 
 /**
@@ -247,13 +247,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), 'element', 0, T
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Modal.__deltemplate_s84_231e36e7 = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Modal.__deltemplate_s78_231e36e7 = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Modal.footer'), 'element', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + ((opt_ijData.renderChildComponents) ? Templates.Modal.footer(opt_data, null, opt_ijData) : ''))}), null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Modal.__deltemplate_s84_231e36e7.soyTemplateName = 'Templates.Modal.__deltemplate_s84_231e36e7';
+  Templates.Modal.__deltemplate_s78_231e36e7.soyTemplateName = 'Templates.Modal.__deltemplate_s78_231e36e7';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', 0, Templates.Modal.__deltemplate_s84_231e36e7);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Modal.footer'), '', 0, Templates.Modal.__deltemplate_s78_231e36e7);
 
 Templates.Modal.content.params = ["id"];
 Templates.Modal.body.params = ["bodyContent"];
