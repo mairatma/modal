@@ -40,13 +40,13 @@ if (goog.DEBUG) {
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s109_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Toolbar.__deltemplate_s105_ef0c27aa = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Component'), '', true)(soy.$$augmentMap(opt_data, {componentName: 'Toolbar'}), null, opt_ijData)));
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s109_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s109_ef0c27aa';
+  Templates.Toolbar.__deltemplate_s105_ef0c27aa.soyTemplateName = 'Templates.Toolbar.__deltemplate_s105_ef0c27aa';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s109_ef0c27aa);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Toolbar.__deltemplate_s105_ef0c27aa);
 
 
 /**
@@ -56,13 +56,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), '', 0, Templates.Too
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s112_d3e7c2ff = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Toolbar', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + ((opt_ijData.renderChildComponents) ? Templates.Toolbar.content(opt_data, null, opt_ijData) : ''))}), null, opt_ijData));
+Templates.Toolbar.__deltemplate_s108_d3e7c2ff = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Toolbar', true)(soy.$$augmentMap(opt_data, {elementContent: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('' + Templates.Toolbar.content(opt_data, null, opt_ijData))}), null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s112_d3e7c2ff.soyTemplateName = 'Templates.Toolbar.__deltemplate_s112_d3e7c2ff';
+  Templates.Toolbar.__deltemplate_s108_d3e7c2ff.soyTemplateName = 'Templates.Toolbar.__deltemplate_s108_d3e7c2ff';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Toolbar', 0, Templates.Toolbar.__deltemplate_s112_d3e7c2ff);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Toolbar', 0, Templates.Toolbar.__deltemplate_s108_d3e7c2ff);
 
 
 /**
@@ -72,13 +72,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentTemplate'), 'Toolbar',
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s118_60a852f1 = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '" class="toolbar ' + soy.$$escapeHtmlAttribute(opt_data.elementClasses ? opt_data.elementClasses : '') + '" data-component>' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
+Templates.Toolbar.__deltemplate_s112_60a852f1 = function(opt_data, opt_ignored, opt_ijData) {
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml('<div id="' + soy.$$escapeHtmlAttribute(opt_data.id) + '" class="toolbar' + soy.$$escapeHtmlAttribute(opt_data.elementClasses ? ' ' + opt_data.elementClasses : '') + '" data-component="">' + soy.$$escapeHtml(opt_data.elementContent) + '</div>');
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s118_60a852f1.soyTemplateName = 'Templates.Toolbar.__deltemplate_s118_60a852f1';
+  Templates.Toolbar.__deltemplate_s112_60a852f1.soyTemplateName = 'Templates.Toolbar.__deltemplate_s112_60a852f1';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), 'element', 0, Templates.Toolbar.__deltemplate_s118_60a852f1);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), 'element', 0, Templates.Toolbar.__deltemplate_s112_60a852f1);
 
 
 /**
@@ -88,13 +88,13 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Toolbar'), 'element', 0, Templa
  * @return {!soydata.SanitizedHtml}
  * @suppress {checkTypes}
  */
-Templates.Toolbar.__deltemplate_s126_3dff4bfb = function(opt_data, opt_ignored, opt_ijData) {
+Templates.Toolbar.__deltemplate_s120_3dff4bfb = function(opt_data, opt_ignored, opt_ijData) {
   return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$getDelegateFn(soy.$$getDelTemplateId('Toolbar'), 'element', true)(opt_data, null, opt_ijData));
 };
 if (goog.DEBUG) {
-  Templates.Toolbar.__deltemplate_s126_3dff4bfb.soyTemplateName = 'Templates.Toolbar.__deltemplate_s126_3dff4bfb';
+  Templates.Toolbar.__deltemplate_s120_3dff4bfb.soyTemplateName = 'Templates.Toolbar.__deltemplate_s120_3dff4bfb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Toolbar', 0, Templates.Toolbar.__deltemplate_s126_3dff4bfb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ComponentElement'), 'Toolbar', 0, Templates.Toolbar.__deltemplate_s120_3dff4bfb);
 
 Templates.Toolbar.content.params = ["children","id"];
 /* jshint ignore:end */

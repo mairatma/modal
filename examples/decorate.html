@@ -17,7 +17,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div id="modal-header">
-            <div class="modal-header" onmouseover="handleMouseOver" onmouseout="handleMouseOut">
+            <div class="modal-header" data-onmouseover="handleMouseOver" data-onmouseout="handleMouseOut">
               <h4 class="modal-title">Modal header</h4>
             </div>
           </div>
@@ -25,15 +25,15 @@
             <p>One fine body…</p>
           </div>
           <div id="modal-footer">
-            <div class="modal-footer" onclick="handleButtonClick">
-              <div id="modal-toolbar" class="" data-component>
-                <div id="modal-toolbar-children-placeholder" data-component-children><button id="modal-button0" class="btn btn-default" data-component>Cancel</button><button id="modal-button1" class="btn btn-primary" data-component>OK</button></div>
+            <div class="modal-footer" data-onclick="handleButtonClick">
+              <div id="modal-toolbar" class="toolbar" data-component>
+                <div id="modal-toolbar-children-placeholder" data-component-children><button id="modal-button0" class="btn btn-default" data-component="">Cancel</button><button id="modal-button1" class="btn btn-primary" data-component="">OK</button></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="modal-tooltip" class="" data-component style="opacity: 0;">
+      <div id="modal-tooltip" class="tooltip right " data-component style="opacity: 0;">
         <div class="tooltip-arrow"></div>
         <div id="modal-tooltip-innerContent">
           <div class="tooltip-inner">
